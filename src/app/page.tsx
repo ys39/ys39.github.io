@@ -36,16 +36,63 @@ export default function Home() {
           </p>
         </section>
 
-        {/* Skills Section */}
+        {/* Skills and achievement section */}
         <section className="bg-white shadow-md rounded-lg p-8 mb-10">
           <h2 className="text-2xl font-semibold mb-4">Skills</h2>
-          <div className="flex flex-wrap">
-            <span className="bg-blue-200 text-blue-800 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">JavaScript</span>
-            <span className="bg-green-200 text-green-800 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">TypeScript</span>
-            <span className="bg-red-200 text-red-800 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">React</span>
-            <span className="bg-purple-200 text-purple-800 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">Next.js</span>
-            <span className="bg-yellow-200 text-yellow-800 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">Tailwind CSS</span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {/* Frontend Skills */}
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Frontend</h3>
+              <ul className="list-none">
+                <li className="bg-blue-200 text-blue-800 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">JavaScript</li>
+                <li className="bg-green-200 text-green-800 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">TypeScript</li>
+                <li className="bg-red-200 text-red-800 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">React</li>
+                <li className="bg-purple-200 text-purple-800 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">Next.js</li>
+                <li className="bg-yellow-200 text-yellow-800 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">Tailwind CSS</li>
+              </ul>
+            </div>
+            {/* Backend Skills */}
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Backend</h3>
+              <ul className="list-none">
+                <li className="bg-blue-200 text-blue-800 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">Node.js</li>
+                <li className="bg-green-200 text-green-800 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">Express</li>
+                <li className="bg-red-200 text-red-800 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">MongoDB</li>
+                <li className="bg-purple-200 text-purple-800 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">Firebase</li>
+                <li className="bg-yellow-200 text-yellow-800 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">GraphQL</li>
+              </ul>
+            </div>
+            {/* Tools */}
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Tools</h3>
+              <ul className="list-none">
+                <li className="bg-blue-200 text-blue-800 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">Git</li>
+                <li className="bg-green-200 text-green-800 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">Docker</li>
+                <li className="bg-red-200 text-red-800 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">Jest</li>
+                <li className="bg-purple-200 text-purple-800 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">VS Code</li>
+                <li className="bg-yellow-200 text-yellow-800 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">Figma</li>
+              </ul>
+            </div>
+            {/* Database */}
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Database</h3>
+              <ul className="list-none">
+                <li className="bg-blue-200 text-blue-800 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">MySQL</li>
+                <li className="bg-green-200 text-green-800 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">PostgreSQL</li>
+                <li className="bg-red-200 text-red-800 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">SQLite</li>
+                <li className="bg-purple-200 text-purple-800 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">Redis</li>
+                <li className="bg-yellow-200 text-yellow-800 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">Cassandra</li>
+              </ul>
+            </div>
           </div>
+        </section>
+
+        {/* Interests */}
+        <section className="bg-white shadow-md rounded-lg p-8 mb-10">
+          <h2 className="text-2xl font-semibold mb-4">Interests</h2>
+          <p className="text-gray-700 leading-relaxed">
+            When I am not coding, I enjoy spending time with my family, playing guitar, and hiking in the mountains.
+          </p>
         </section>
 
         {/* Contact Section */}
