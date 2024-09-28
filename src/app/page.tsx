@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import ZennLogo from './logo-only.svg';
 import GithubLogo from './github-mark.svg';
-import MyImage from './me.jpg';
+import MyImage from './me.webp';
 
 export default function Home() {
   return (
