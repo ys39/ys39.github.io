@@ -1,0 +1,25 @@
+# node_modules ディレクトリを無視
+node_modules
+
+# ビルドや出力ディレクトリを無視
+build
+dist
+
+# 個別のファイルを無視
+package-lock.json
+yarn.lock
+
+# 特定のディレクトリ内のすべてのファイルを無視
+public/**/*.html
+coverage/
+
+# すべての Markdown ファイルを無視
+*.md
+
+# 特定のファイルを無視
+src/legacy/**/*
+
+# 特定の拡張子を無視
+*.min.js
+*.log
+
