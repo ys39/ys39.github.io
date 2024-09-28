@@ -33,10 +33,9 @@ export default function Home() {
         <section className="bg-white shadow-md rounded-lg p-8 mb-10">
           <h2 className="text-2xl font-semibold mb-4">About Me</h2>
           <p className="text-gray-700 leading-relaxed">
-            I am a passionate web developer with a love for creating interactive
-            and visually appealing web applications. With a strong background in
-            both front-end and back-end technologies, I strive to build products
-            that provide users with a seamless experience.
+            A web engineer with interests in infrastructure, frontend, and
+            backend development, but most skilled in backend development. Always
+            aiming to design more robust and high-performance systems.
           </p>
         </section>
 
@@ -72,16 +71,19 @@ export default function Home() {
                 <li className="bg-slate-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
                   Rust
                 </li>
+                <li className="bg-slate-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
+                  Ruby
+                </li>
               </ul>
             </div>
             {/* Markup */}
             <div>
               <h3 className="text-xl font-semibold mb-2">Markup</h3>
               <ul className="list-none">
-                <li className="bg-blue-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
+                <li className="bg-stone-300 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
                   HTML
                 </li>
-                <li className="bg-blue-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
+                <li className="bg-stone-300 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
                   CSS
                 </li>
               </ul>
@@ -101,9 +103,9 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-            {/* Tools */}
+            {/* Backend */}
             <div>
-              <h3 className="text-xl font-semibold mb-2">Tools</h3>
+              <h3 className="text-xl font-semibold mb-2">Backend</h3>
               <ul className="list-none">
                 <li className="bg-sky-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
                   Nginx
@@ -115,16 +117,43 @@ export default function Home() {
                   Docker / Docker Compose
                 </li>
                 <li className="bg-sky-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
+                  GraphQL
+                </li>
+                <li className="bg-sky-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
+                  Restful API
+                </li>
+              </ul>
+            </div>
+            {/* o11y */}
+            <div>
+              <h3 className="text-xl font-semibold mb-2">o11y</h3>
+              <ul className="list-none">
+                <li className="bg-teal-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
                   Zabbix
                 </li>
-                <li className="bg-sky-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
+                <li className="bg-teal-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
                   Grafana
                 </li>
-                <li className="bg-sky-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
+                <li className="bg-teal-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
+                  Fluentd
+                </li>
+              </ul>
+            </div>
+            {/* CI/CD */}
+            <div>
+              <h3 className="text-xl font-semibold mb-2">CI/CD</h3>
+              <ul className="list-none">
+                <li className="bg-indigo-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
                   Git / GitHub Actions
                 </li>
-                <li className="bg-sky-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  Fluentd
+                <li className="bg-indigo-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
+                  Ansible
+                </li>
+                <li className="bg-indigo-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
+                  Capistrano
+                </li>
+                <li className="bg-indigo-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
+                  Serverspec
                 </li>
               </ul>
             </div>
@@ -153,8 +182,11 @@ export default function Home() {
             <div>
               <h3 className="text-xl font-semibold mb-2">Cloud</h3>
               <ul className="list-none">
-                <li className="bg-green-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
+                <li className="bg-purple-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
                   AWS
+                </li>
+                <li className="bg-purple-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
+                  Cloudflare
                 </li>
               </ul>
             </div>
@@ -164,14 +196,45 @@ export default function Home() {
         {/* Interests */}
         <section className="bg-white shadow-md rounded-lg p-8 mb-10">
           <h2 className="text-2xl font-semibold mb-4">Interests</h2>
-          <p className="text-gray-700 leading-relaxed">
-            When I am not coding, I enjoy spending time with my family, playing
-            guitar, and hiking in the mountains.
-          </p>
+          <ul className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+            <li className="bg-gray-100 border  rounded-lg p-4 shadow-md">
+              SRE
+            </li>
+            <li className="bg-gray-100 border  rounded-lg p-4 shadow-md">
+              DevSecOps
+            </li>
+            <li className="bg-gray-100 border  rounded-lg p-4 shadow-md">
+              Architecture
+            </li>
+            <li className="bg-gray-100 border  rounded-lg p-4 shadow-md">
+              WebAssembly
+            </li>
+            <li className="bg-gray-100 border  rounded-lg p-4 shadow-md">
+              Modernization
+            </li>
+          </ul>
+        </section>
+
+        {/* Qualifications */}
+        <section className="bg-white shadow-md rounded-lg p-8 mb-10">
+          <h2 className="text-2xl font-semibold mb-4">Qualifications</h2>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+            <li className="bg-gray-100 border  rounded-lg p-4 shadow-md">
+              AWS Certified Solutions Architect - Associate
+            </li>
+            <li className="bg-gray-100 border  rounded-lg p-4 shadow-md">
+              AWS Certified Solutions Architect - Professional
+            </li>
+            <li className="bg-gray-100 border  rounded-lg p-4 shadow-md">
+              基本情報技術者試験
+            </li>
+            <li className="bg-gray-100 border  rounded-lg p-4 shadow-md">
+              LinuC101/102
+            </li>
+          </ul>
         </section>
 
         {/* Contact Section */}
-
         <section className="bg-white shadow-md rounded-lg p-8">
           <h2 className="text-2xl font-semibold mb-4">Social Media</h2>
           <div className="flex items-center space-x-4">
