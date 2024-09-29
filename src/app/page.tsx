@@ -39,7 +39,7 @@ export default function Home() {
           <span className="border-gray-200 float-end">
             <Link
               href="/blog"
-              className="text-blue-500 hover:text-blue-700 font-medium"
+              className="text-blue-700 font-medium"
             >
               &gt;&gt;Blog
             </Link>
