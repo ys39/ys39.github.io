@@ -1,18 +1,21 @@
-import Head from 'next/head';
+//import Head from 'next/head';
+import type { Metadata } from 'next'
 import Image from 'next/image';
 import ZennLogo from './logo-only.svg';
 import GithubLogo from './github-mark.svg';
 import MyImage from './me.webp';
 
+export const metadata: Metadata = {
+  title: 'My Portfolio',
+  description: 'My personal portfolio',
+  icons: {
+    icon: '/favicon.ico',
+  },
+};
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-100">
-      <Head>
-        <title>My Portfolio</title>
-        <meta name="description" content="My personal portfolio" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <main className="container mx-auto px-4 py-10">
         {/* Hero Section */}
         <section className="text-center mb-10">
@@ -20,9 +23,9 @@ export default function Home() {
             <Image
               src={MyImage} // パスはパブリックフォルダにある画像を指します
               alt="ys39"
-              layout="fill"
-              objectFit="cover"
               priority // 最初に表示されるため優先的に読み込む
+              fill
+              style={{ objectFit: 'cover' }}
             />
           </div>
           <h1 className="text-4xl font-bold mt-4">Sen</h1>
@@ -37,6 +40,18 @@ export default function Home() {
             backend development, but most skilled in backend development. Always
             aiming to design more robust and high-performance systems.
           </p>
+        </section>
+
+        {/* Blog section */}
+        <section className="bg-white shadow-md rounded-lg p-8 mb-10">
+          <h2 className="text-2xl font-semibold mb-4">Blog</h2>
+          <ul>
+            <li className="border-gray-200 py-4">
+              <a href="./blog/" className="text-gray-700 hover:text-gray-900">
+                Blogへ
+              </a>
+            </li>
+          </ul>
         </section>
 
         {/* Skills and achievement section */}
