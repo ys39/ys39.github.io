@@ -1,17 +1,8 @@
-//import Head from 'next/head';
-import type { Metadata } from 'next'
 import Image from 'next/image';
 import ZennLogo from './logo-only.svg';
 import GithubLogo from './github-mark.svg';
 import MyImage from './me.webp';
-
-export const metadata: Metadata = {
-  title: 'My Portfolio',
-  description: 'My personal portfolio',
-  icons: {
-    icon: '/favicon.ico',
-  },
-};
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -45,13 +36,14 @@ export default function Home() {
         {/* Blog section */}
         <section className="bg-white shadow-md rounded-lg p-8 mb-10">
           <h2 className="text-2xl font-semibold mb-4">Blog</h2>
-          <ul>
-            <li className="border-gray-200 py-4">
-              <a href="./blog/" className="text-gray-700 hover:text-gray-900">
-                Blogへ
-              </a>
-            </li>
-          </ul>
+          <span className="border-gray-200 float-end">
+            <Link
+              href="/blog"
+              className="text-blue-500 hover:text-blue-700 font-medium"
+            >
+              &gt;&gt;Blog
+            </Link>
+          </span>
         </section>
 
         {/* Skills and achievement section */}

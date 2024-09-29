@@ -6,6 +6,7 @@ import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
 import { PostData } from '../../types/post';
+import Breadcrumb from '../../../components/breadcrumb';
 
 interface PostPageProps {
   params: {
@@ -15,11 +16,23 @@ interface PostPageProps {
 
 export default async function PostPage({ params }: PostPageProps) {
   const postData = await getPostData(params.slug);
-
+  const postDataTitle = postData.title;
+  const breadcrumbItems = [
+    { name: 'Home', href: '/' },
+    { name: 'Blog', href: '/blog' },
+    { name: postDataTitle },
+  ];
   return (
-    <div>
-      <h1>{postData.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: postData.contentHtml || '' }} />
+    <div className="min-h-screen bg-gray-100">
+      <main className="container mx-auto px-4 py-10">
+        <Breadcrumb items={breadcrumbItems} />
+        <article className="prose prose-lg">
+          <h2>{postDataTitle}</h2>
+          <div
+            dangerouslySetInnerHTML={{ __html: postData.contentHtml || '' }}
+          />
+        </article>
+      </main>
     </div>
   );
 }

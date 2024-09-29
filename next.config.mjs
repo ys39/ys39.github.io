@@ -4,6 +4,7 @@ const nextConfig = {
   images: {
     unoptimized: true, // 画像の最適化を無効化
   },
+  trailingSlash: false,
   webpack: (config) => {
     config.module.rules.push({
       test: /\.svg$/,
