@@ -24,9 +24,6 @@ export default function BlogPage() {
                   <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                 </h2>
                 <p className="text-sm text-gray-600 mb-4">{post.date}</p>
-                <p className="text-gray-700">
-                  {/* ここに投稿の抜粋を追加することもできます */}
-                </p>
                 <div className="mt-4">
                   <Link
                     href={`/blog/${post.slug}`}
