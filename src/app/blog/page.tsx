@@ -29,7 +29,7 @@ export default function BlogPage() {
                     href={`/blog/${post.slug}`}
                     className="text-blue-700 hover:text-blue-700 font-medium float-end pb-2"
                   >
-                    &gt;&gt;Read More
+                    &gt;&gt; Read More
                   </Link>
                 </div>
               </div>

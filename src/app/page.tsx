@@ -36,14 +36,14 @@ export default function Home() {
         {/* Blog section */}
         <section className="bg-white shadow-md rounded-lg p-8 mb-10">
           <h2 className="text-2xl font-semibold mb-4">Blog</h2>
-          <span className="border-gray-200 float-end">
+          <div className="text-right">
             <Link
               href="/blog"
-              className="text-blue-700 font-medium"
+              className="text-blue-700 font-medium transition-colors duration-300"
             >
-              &gt;&gt;Blog
+              &gt;&gt; Explore Blog
             </Link>
-          </span>
+          </div>
         </section>
 
         {/* Skills and achievement section */}
@@ -127,7 +127,7 @@ export default function Home() {
                   GraphQL
                 </li>
                 <li className="bg-sky-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  Restful API
+                  RESTful API
                 </li>
               </ul>
             </div>

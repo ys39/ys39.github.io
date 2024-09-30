@@ -24,8 +24,9 @@ export default async function PostPage({ params }: PostPageProps) {
     <div className="min-h-screen bg-gray-100">
       <main className="container mx-auto px-4 py-10">
         <Breadcrumb items={breadcrumbItems} />
-        <article className="prose prose-lg">
-          <h2>{postDataTitle}</h2>
+        <article className="prose prose-lg max-w-none">
+          <h2 className="text-center mb-2">{postDataTitle}</h2>
+          <p className="text-center text-gray-600">公開日：{postData.date}</p>
           <div
             dangerouslySetInnerHTML={{ __html: postData.contentHtml || '' }}
           />
@@ -39,12 +40,9 @@ async function getPostData(slug: string): Promise<PostData> {
   const postsDirectory = path.join(process.cwd(), 'posts');
   const filePath = path.join(postsDirectory, `${slug}.md`);
   const fileContents = fs.readFileSync(filePath, 'utf8');
-
   const { data, content } = matter(fileContents);
-
   const processedContent = await remark().use(html).process(content);
   const contentHtml = processedContent.toString();
-
   return {
     slug,
     title: data.title,
@@ -56,7 +54,6 @@ async function getPostData(slug: string): Promise<PostData> {
 export async function generateStaticParams() {
   const postsDirectory = path.join(process.cwd(), 'posts');
   const filenames = fs.readdirSync(postsDirectory);
-
   return filenames.map((filename) => ({
     slug: filename.replace('.md', ''),
   }));

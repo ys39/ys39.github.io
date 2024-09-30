@@ -16,7 +16,10 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
         {items.map((item, index) => (
           <li key={index} className="flex items-center">
             {item.href ? (
-              <Link href={item.href} className="text-blue-700 hover:nounderline">
+              <Link
+                href={item.href}
+                className="text-blue-700 hover:nounderline"
+              >
                 {item.name}
               </Link>
             ) : (
