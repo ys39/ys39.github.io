@@ -53,6 +53,6 @@ function getPostsData(): PostData[] {
       title: data.title,
       date: data.date,
     };
-  });
+  }).reverse(); // (新しい順に表示するため) 
   return posts;
 }
