@@ -20,7 +20,7 @@ export default function BlogPage() {
               className="bg-white rounded-lg shadow-lg overflow-hidden"
             >
               <div className="p-6">
-                <h2 className="text-2xl font-semibold mb-2 text-gray-800">
+                <h2 className="text-xl font-semibold mb-2 text-gray-800">
                   <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                 </h2>
                 <p className="text-sm text-gray-600 mb-4">{post.date}</p>

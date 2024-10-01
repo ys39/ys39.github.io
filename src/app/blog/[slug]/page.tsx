@@ -27,6 +27,7 @@ export default async function PostPage({ params }: PostPageProps) {
         <article className="prose prose-lg max-w-none">
           <h2 className="text-center mb-2">{postDataTitle}</h2>
           <p className="text-center text-gray-600">公開日：{postData.date}</p>
+          <hr className="h-px my-8 bg-gray-300 border-0 dark:bg-gray-700" />
           <div
             dangerouslySetInnerHTML={{ __html: postData.contentHtml || '' }}
           />

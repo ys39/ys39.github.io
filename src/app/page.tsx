@@ -31,11 +31,6 @@ export default function Home() {
             backend development, but most skilled in backend development. Always
             aiming to design more robust and high-performance systems.
           </p>
-        </section>
-
-        {/* Blog section */}
-        <section className="bg-white shadow-md rounded-lg p-8 mb-10">
-          <h2 className="text-2xl font-semibold mb-4">Blog</h2>
           <div className="text-right">
             <Link
               href="/blog"
@@ -218,6 +213,9 @@ export default function Home() {
             </li>
             <li className="bg-gray-100 border  rounded-lg p-4 shadow-md">
               Modernization
+            </li>
+            <li className="bg-gray-100 border  rounded-lg p-4 shadow-md">
+              Robotics
             </li>
           </ul>
         </section>
