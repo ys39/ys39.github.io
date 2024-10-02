@@ -76,6 +76,9 @@ export default function Home() {
                 <li className="bg-slate-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
                   Ruby
                 </li>
+                <li className="bg-slate-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
+                  Golang
+                </li>
               </ul>
             </div>
             {/* Markup */}
@@ -102,6 +105,9 @@ export default function Home() {
                 </li>
                 <li className="bg-orange-100 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
                   Next.js
+                </li>
+                <li className="bg-orange-100 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
+                  Gin
                 </li>
               </ul>
             </div>
