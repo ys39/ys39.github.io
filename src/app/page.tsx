@@ -1,7 +1,4 @@
 import Image from 'next/image';
-import ZennLogo from './logo-only.svg';
-import GithubLogo from './github-mark.svg';
-import MyImage from './me.webp';
 import Link from 'next/link';
 
 export default function Home() {
@@ -12,7 +9,7 @@ export default function Home() {
         <section className="text-center mb-10">
           <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-gray-300">
             <Image
-              src={MyImage} // パスはパブリックフォルダにある画像を指します
+              src="/me.webp"
               alt="ys39"
               priority // 最初に表示されるため優先的に読み込む
               fill
@@ -108,6 +105,9 @@ export default function Home() {
                 </li>
                 <li className="bg-orange-100 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
                   Gin
+                </li>
+                <li className="bg-orange-100 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
+                  NestJS
                 </li>
               </ul>
             </div>
@@ -257,7 +257,12 @@ export default function Home() {
               target="_blank"
               rel="noreferrer noopener"
             >
-              <ZennLogo className="w-6 h-6" />
+              <Image
+                src="logo-only.svg"
+                alt="Zenn"
+                width={20}
+                height={20}
+              />
             </a>
             {/* Github */}
             <a
@@ -267,7 +272,12 @@ export default function Home() {
               target="_blank"
               rel="noreferrer noopener"
             >
-              <GithubLogo className="w-6 h-6" />
+              <Image
+                src="/github-mark.svg"
+                alt="GitHub"
+                width={20}
+                height={20}
+              />
             </a>
           </div>
         </section>
