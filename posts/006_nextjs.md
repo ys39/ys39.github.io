@@ -97,6 +97,66 @@ date: '2024-10-05'
   - `default.tsx`
     - パラレルルート（並列ルーティング）のフォールバックページを定義するファイル
 
+### Components
+
+- Form
+
+  ```tsx
+  import Form from 'next/form';
+
+  export default function Page() {
+    return (
+      <Form action="/search">
+        {/* On submission, the input value will be appended to 
+            the URL, e.g. /search?query=abc */}
+        <input name="query" />
+        <button type="submit">Submit</button>
+      </Form>
+    );
+  }
+  ```
+
+- Image
+
+  ```tsx
+  import Image from 'next/image';
+
+  export default function Page() {
+    return (
+      <Image
+        src="/profile.png"
+        width={500}
+        height={500}
+        alt="Picture of the author"
+      />
+    );
+  }
+  ```
+
+- Link
+
+  ```tsx
+  import Link from 'next/link';
+
+  export default function Page() {
+    return <Link href="/dashboard">Dashboard</Link>;
+  }
+  ```
+
+- Script
+
+  ```tsx
+  import Script from 'next/script';
+
+  export default function Dashboard() {
+    return (
+      <>
+        <Script src="https://example.com/script.js" />
+      </>
+    );
+  }
+  ```
+
 ### 参考
 
 - [Project Structure](https://nextjs.org/docs/getting-started/project-structure)
