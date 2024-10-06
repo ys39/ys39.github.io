@@ -30,10 +30,10 @@ export default function Home() {
           </p>
           <div className="text-right">
             <Link
-              href="/blog"
+              href="/weblog"
               className="text-blue-700 font-medium transition-colors duration-300"
             >
-              &gt;&gt; Explore Blog
+              &gt;&gt; Explore Weblog
             </Link>
           </div>
         </section>

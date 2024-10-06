@@ -180,7 +180,7 @@ date: '2024-09-30'
    ├── prettier.config.mjs
    ├── src  // ソースコード
    │   ├── app
-   │   │   ├── blog
+   │   │   ├── weblog
    │   │   │   ├── [slug]
    │   │   │   │   └── page.tsx # ブログ記事のページ
    │   │   │   └── page.tsx # ブログ一覧ページ

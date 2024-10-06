@@ -5,9 +5,9 @@ import matter from 'gray-matter';
 import { PostData } from '../types/post';
 import Breadcrumb from '../../components/breadcrumb';
 
-export default function BlogPage() {
+export default function WeblogPage() {
   const posts = getPostsData();
-  const breadcrumbItems = [{ name: 'Home', href: '/' }, { name: 'Blog' }];
+  const breadcrumbItems = [{ name: 'Home', href: '/' }, { name: 'Weblog' }];
   return (
     <div className="min-h-screen bg-gray-100">
       <main className="container mx-auto px-4 py-10">
@@ -21,12 +21,12 @@ export default function BlogPage() {
             >
               <div className="p-6">
                 <h2 className="text-xl font-semibold mb-2 text-gray-800">
-                  <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+                  <Link href={`/weblog/${post.slug}`}>{post.title}</Link>
                 </h2>
                 <p className="text-sm text-gray-600 mb-4">{post.date}</p>
                 <div className="mt-4">
                   <Link
-                    href={`/blog/${post.slug}`}
+                    href={`/weblog/${post.slug}`}
                     className="text-blue-700 hover:text-blue-700 font-medium float-end pb-2"
                   >
                     &gt;&gt; Read More

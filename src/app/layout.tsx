@@ -17,7 +17,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: 'Sen | Portfolio',
-  description: 'My personal portfolio',
+  description: 'Sen portfolio',
   icons: {
     icon: '/favicon.ico',
   },

@@ -19,7 +19,7 @@ export default async function PostPage({ params }: PostPageProps) {
   const postDataTitle = postData.title;
   const breadcrumbItems = [
     { name: 'Home', href: '/' },
-    { name: 'Blog', href: '/blog' },
+    { name: 'Weblog', href: '/weblog' },
     { name: postDataTitle },
   ];
   return (
