@@ -51,7 +51,7 @@ date: '2024-10-03'
     - モジュールはそのモジュールに含まれるControllerやServiceをまとめる。
 
 - データの流れは下記の通り
-  ```
+  ```bash
   main.ts
   └── app module(root)
       ├── DB
