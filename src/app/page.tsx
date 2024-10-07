@@ -184,6 +184,9 @@ export default function Home() {
                 <li className="bg-rose-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
                   Memcached
                 </li>
+                <li className="bg-rose-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
+                  Cassandra
+                </li>
               </ul>
             </div>
             {/* Cloud */}
