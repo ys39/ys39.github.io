@@ -471,9 +471,9 @@ date: '2024-10-07'
   - [Yahoo! JAPAN Tech Blog](https://techblog.yahoo.co.jp/entry/20200129803067/)
   - [Cassandra 公式](https://cassandra.apache.org/_/cassandra-basics.html)
   - [OpenStandia OSS紹介](https://openstandia.jp/oss_info/cassandra/)
-  - ["DATASTAX ユースケース"](https://www.datastax.com/jp/blog/exploring-common-apache-cassandra-use-cases)
+  - [DATASTAX ユースケース](https://www.datastax.com/jp/blog/exploring-common-apache-cassandra-use-cases)
 
 - CQLの基本を学ぶ
-  - ["https://naoty.dev/posts/449"](https://naoty.dev/posts/449)
-  - ["DATASTAX Documentation"](https://docs.datastax.com/ja/dse/5.1/cql/index.html)
-  - ["https://zenn.dev/andoobomber/articles/2403b10c9d3712802707"](https://zenn.dev/andoobomber/articles/2403b10c9d3712802707)
+  - [https://naoty.dev/posts/449](https://naoty.dev/posts/449)
+  - [DATASTAX Documentation](https://docs.datastax.com/ja/dse/5.1/cql/index.html)
+  - [https://zenn.dev/andoobomber/articles/2403b10c9d3712802707](https://zenn.dev/andoobomber/articles/2403b10c9d3712802707)
