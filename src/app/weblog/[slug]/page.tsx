@@ -5,6 +5,7 @@ import { remark } from 'remark';
 import rehypeStringify from 'rehype-stringify'; // rehypeからHTMLに変換
 import remarkRehype from 'remark-rehype';
 import rehypeHighlight from 'rehype-highlight';
+import remarkGfm from 'remark-gfm';
 import { PostData } from '../../types/post';
 import Breadcrumb from '../../../components/breadcrumb';
 
@@ -45,6 +46,7 @@ async function getPostData(slug: string): Promise<PostData> {
   const fileContents = fs.readFileSync(filePath, 'utf8');
   const { data, content } = matter(fileContents);
   const processedContent = await remark() // remark で Markdown を解析して AST(mdast) を生成
+    .use(remarkGfm) // テーブルなどのGFM機能を有効化
     .use(remarkRehype) // AST(mdast) を HTML の AST(hast) に変換
     .use(rehypeHighlight) // AST(hast)に対して Syntax Highlight を適用
     .use(rehypeStringify) // AST(hast) を HTML に変換
