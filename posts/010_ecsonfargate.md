@@ -78,6 +78,9 @@ date: '2024-10-09'
 
 ### 新規コンテナへのデプロイ(手動)
 
+- 新規コンテナを作成し、手動でECS on Fargateにデプロイする手順を記載する。
+  ![ECSonFargate_ManualDeploy](../posts/ECSonFargate_ManualDeploy.png)
+
 1. AWSマネジメントコンソールにログインし、ECSのコンソールを開き、新規リポジトリを作成する。
 2. 認証トークンを取得し、Dockerクライアントをレジストリに認証。 AWS CLIを使用する。
    ```bash
