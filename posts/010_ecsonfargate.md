@@ -1,5 +1,5 @@
 ---
-title: 'ECS on Fargateでデプロイ'
+title: 'ECS on Fargateで手動デプロイ'
 date: '2024-10-09'
 ---
 
@@ -122,7 +122,7 @@ date: '2024-10-09'
 
 ### まとめ
 
-- 今回はECS on Fargateの要素を調査して、CloudFormationを使ってECS on Fargateを試すことができた。
+- 今回はECS on Fargateの要素を調査して、CloudFormationを使ってECS on Fargateを試すことができた。(ECSを簡単に試すにはAWS Copilotも便利だそう。)
 - また手動だが、新規イメージを作成して、ECRとECSを連携することで、ECSのデプロイを行うことができた。
 - 今後はGithub ActionsやCircleCI, AWS CodePipelineなどを使ってCI/CDパイプラインを構築し、自動デプロイを行っていきたい。
 
