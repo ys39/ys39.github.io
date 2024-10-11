@@ -240,3 +240,4 @@ date: '2024-10-11'
 
 - [https://dev.classmethod.jp/articles/githubactions-ecs-fargate-cicd-beginner/](https://dev.classmethod.jp/articles/githubactions-ecs-fargate-cicd-beginner/)
 - [https://dev.classmethod.jp/articles/github-actions-ecs-ecr-minimum-iam-policy/](https://dev.classmethod.jp/articles/github-actions-ecs-ecr-minimum-iam-policy/)
+- GitHub CI/CD実践ガイド 技術評論社
