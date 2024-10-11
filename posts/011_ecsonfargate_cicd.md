@@ -229,6 +229,11 @@ date: '2024-10-11'
 
     - タスク定義は手動で削除する
 
+### GitHub ActionsでのECS on Fargateデプロイ図
+
+- 今回の流れを図に整理した。
+  ![ECS on Fargate CICD](../posts/ECSonFargate-githubActionsDeploy.jpg)
+
 ### まとめ
 
 - 今回はGitHub Actionsを利用してECS on Fargateへのデプロイを行いました。
