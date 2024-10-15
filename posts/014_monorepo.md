@@ -30,10 +30,11 @@ date: '2024-10-15'
 
 ### モノレポツールの種類
 
-- Nx
-- Turborepo
-- Lerna
-- Bazel
+- [monorepo.tools](https://monorepo.tools/) には、モノレポツールの比較がまとめられている。有名どころだと、以下のようなツールがある。
+  - Nx
+  - Turborepo
+  - Lerna
+  - Bazel
 
 ### モノレポを採用している企業事例
 
@@ -82,3 +83,4 @@ date: '2024-10-15'
 - [DeLMO Tech Blog](https://tech.delm0.jp/entry/2023/05/29/161202)
 - [mercari engineering](https://engineering.mercari.com/blog/entry/20210817-8f561697cc/)
 - [giftee Tech Blog](https://tech.giftee.co.jp/entry/2021/08/01/180000)
+- [monorepo.tools](https://monorepo.tools/)

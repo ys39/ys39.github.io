@@ -51,4 +51,24 @@ export const termsList: TermsData[] = [
     date: '',
     link: '',
   },
+  {
+    title: 'Istio',
+    date: '',
+    link: '',
+  },
+  {
+    title: 'パッケージマネージャの比較',
+    date: '',
+    link: '',
+  },
+  {
+    title: 'Makefile',
+    date: '',
+    link: '',
+  },
+  {
+    title: 'emotion',
+    date: '',
+    link: '',
+  },
 ];
