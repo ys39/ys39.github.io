@@ -17,7 +17,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Consolas, Arial, Helvetica, "system-ui", sans-serif;
+  font-family: Consolas, Arial, Helvetica, sans-serif;
 }
 
 @layer utilities {
@@ -63,4 +63,16 @@ body {
 .prose a {
   color: #0070f3;
   text-decoration: none;
+}
+
+.prose h3::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: #ccc;
+  margin: 10px 0;
+}
+
+.prose h3::after, h3::after {
+  margin-top: 10px;
 }

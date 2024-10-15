@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { ArrowRightIcon  } from '@heroicons/react/24/solid'
 
 export default function Home() {
   return (
@@ -9,38 +10,65 @@ export default function Home() {
         <section className="text-center mb-10">
           <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-gray-300">
             <Image
-              src="/me.webp"
+              src="/me_shuffle.webp"
               alt="ys39"
-              priority // 最初に表示されるため優先的に読み込む
+              priority
               fill
               style={{ objectFit: 'cover' }}
             />
           </div>
-          <h1 className="text-4xl font-bold mt-4">Sen</h1>
+          <h1 className="text-4xl font-bold mt-4 dark:text-gray-700">Sen</h1>
           <p className="text-gray-700 mt-2">Web Developer | Programmer</p>
         </section>
 
         {/* About Me Section */}
-        <section className="bg-white shadow-md rounded-lg p-8 mb-10">
+        <section className="bg-white shadow-md rounded-lg p-8 mb-10 dark:text-gray-700">
           <h2 className="text-2xl font-semibold mb-4">About Me</h2>
           <p className="text-gray-700 leading-relaxed">
             A web engineer with interests in infrastructure, frontend, and
             backend development, but most skilled in backend development. Always
             aiming to design more robust and high-performance systems.
           </p>
-          <div className="text-right">
+        </section>
+
+        {/* About Me and Tech Bookmarks Section */}
+        <section className="flex flex-col md:flex-row gap-6 mb-10">
+          {/* Weblog Card */}
+          <div className="bg-white shadow-md rounded-lg p-8 dark:text-gray-700 w-full md:w-1/2">
             <Link
               href="/weblog"
               className="text-blue-700 font-medium transition-colors duration-300"
             >
-              &gt;&gt; Explore Weblog
+              <div>
+                <h2 className="text-2xl font-semibold mb-4">Weblog</h2>
+                <p className="text-gray-700 leading-relaxed">
+                  I will record the things I learn and research daily.
+                </p>
+              </div>
+              <ArrowRightIcon className="h-6 w-6 text-blue-700 float-end" />
+            </Link>
+          </div>
+
+          {/* Tech Bookmarks Card */}
+          <div className="bg-white shadow-md rounded-lg p-8 dark:text-gray-700 w-full md:w-1/2">
+            <Link
+              href="/tech-bookmarks"
+              className="text-blue-700 font-medium transition-colors duration-300"
+            >
+              <div>
+                <h2 className="text-2xl font-semibold mb-4">Tech Bookmarks</h2>
+                <p className="text-gray-700 leading-relaxed">
+                  I will document the technologies and topics planned for future research.
+                </p>
+              </div>
+              <ArrowRightIcon className="h-6 w-6 text-blue-700 float-end" />
             </Link>
           </div>
         </section>
 
         {/* Skills and achievement section */}
-        <section className="bg-white shadow-md rounded-lg p-8 mb-10">
-          <h2 className="text-2xl font-semibold mb-4">Skills</h2>
+        <section className="bg-white shadow-md rounded-lg p-8 mb-10 dark:text-gray-700">
+          <h2 className="text-2xl font-semibold mb-4 ">Skills</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {/* Coding */}
             <div>
@@ -205,7 +233,7 @@ export default function Home() {
         </section>
 
         {/* Interests */}
-        <section className="bg-white shadow-md rounded-lg p-8 mb-10">
+        <section className="bg-white shadow-md rounded-lg p-8 mb-10 dark:text-gray-700">
           <h2 className="text-2xl font-semibold mb-4">Interests</h2>
           <ul className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-4">
             <li className="bg-gray-100 border  rounded-lg p-4 shadow-md">
@@ -230,7 +258,7 @@ export default function Home() {
         </section>
 
         {/* Qualifications */}
-        <section className="bg-white shadow-md rounded-lg p-8 mb-10">
+        <section className="bg-white shadow-md rounded-lg p-8 mb-10 dark:text-gray-700">
           <h2 className="text-2xl font-semibold mb-4">Qualifications</h2>
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
             <li className="bg-gray-100 border  rounded-lg p-4 shadow-md">
@@ -249,7 +277,7 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section className="bg-white shadow-md rounded-lg p-8">
+        <section className="bg-white shadow-md rounded-lg p-8 dark:text-gray-700">
           <h2 className="text-2xl font-semibold mb-4">Social Media</h2>
           <div className="flex items-center space-x-4">
             {/* Zenn */}
@@ -278,6 +306,21 @@ export default function Home() {
               <Image
                 src="/github-mark.svg"
                 alt="GitHub"
+                width={20}
+                height={20}
+              />
+            </a>
+            {/* X */}
+            <a
+              href="https://x.com/Sypo39"
+              className="text-gray-600 hover:text-gray-900"
+              aria-label="X"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <Image
+                src="/x-logo-black.png"
+                alt="X"
                 width={20}
                 height={20}
               />
