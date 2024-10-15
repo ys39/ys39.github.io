@@ -13,7 +13,7 @@ export default function WeblogPage() {
       <main className="container mx-auto px-4 py-10">
         <Breadcrumb items={breadcrumbItems} />
 
-        <h1 className="text-4xl text-center font-bold mb-4">Weblog</h1>
+        <h1 className="text-4xl text-center font-bold mb-4 dark:text-gray-700">Weblog</h1>
         <div className="text-center text-gray-600 mb-6">I will record the things I learn and research daily.</div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {posts.map((post) => (
