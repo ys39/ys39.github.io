@@ -76,3 +76,7 @@ body {
 .prose h3::after, h3::after {
   margin-top: 10px;
 }
+
+.prose .hljs-comment {
+  color: #42a257;
+}
