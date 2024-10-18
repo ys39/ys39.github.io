@@ -12,11 +12,6 @@ export const termsList: TermsData[] = [
     link: '',
   },
   {
-    title: 'Echo',
-    date: '',
-    link: '',
-  },
-  {
     title: 'husky',
     date: '',
     link: '',
@@ -62,12 +57,12 @@ export const termsList: TermsData[] = [
     link: '',
   },
   {
-    title: 'Makefile',
+    title: 'emotion',
     date: '',
     link: '',
   },
   {
-    title: 'emotion',
+    title: 'Playwright',
     date: '',
     link: '',
   },
