@@ -1,5 +1,5 @@
 ---
-title: 'git tips'
+title: 'Git tips'
 date: '2024-10-20'
 ---
 
@@ -15,7 +15,7 @@ date: '2024-10-20'
   git config --global core.editor vim
   ```
 
-### alias
+### Alias
 
 - git config でコマンドのエイリアスを設定できる
 - `git config --global alias.<alias-name> "<command>"` で設定する
@@ -99,7 +99,15 @@ date: '2024-10-20'
 - 下記のコマンドでインストールする
   ```bash
   npm install --save-dev husky
+  npx husky init # 初期設定
   ```
+- 以下のコマンドでHooksを設定する
+  ```bash
+  vim .husky/pre-commit
+  echo "npm run lint" >> .husky/pre-commit
+  echo "npm run format" >> .husky/pre-commit
+  ```
+- git commitを実行すると、pre-commitで設定したコマンドが実行される
 
 ### 参考
 
