@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRightIcon  } from '@heroicons/react/24/solid'
+import { ArrowRightIcon } from '@heroicons/react/24/solid';
 
 export default function Home() {
   return (
@@ -58,7 +58,8 @@ export default function Home() {
               <div>
                 <h2 className="text-2xl font-semibold mb-4">Tech Bookmarks</h2>
                 <p className="text-gray-700 leading-relaxed">
-                  I will document the technologies and topics planned for future research.
+                  I will document the technologies and topics planned for future
+                  research.
                 </p>
               </div>
               <ArrowRightIcon className="h-6 w-6 text-blue-700 float-end" />
@@ -288,12 +289,7 @@ export default function Home() {
               target="_blank"
               rel="noreferrer noopener"
             >
-              <Image
-                src="logo-only.svg"
-                alt="Zenn"
-                width={20}
-                height={20}
-              />
+              <Image src="logo-only.svg" alt="Zenn" width={20} height={20} />
             </a>
             {/* Github */}
             <a
@@ -318,12 +314,7 @@ export default function Home() {
               target="_blank"
               rel="noreferrer noopener"
             >
-              <Image
-                src="/x-logo-black.png"
-                alt="X"
-                width={20}
-                height={20}
-              />
+              <Image src="/x-logo-black.png" alt="X" width={20} height={20} />
             </a>
           </div>
         </section>

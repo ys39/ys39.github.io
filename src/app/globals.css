@@ -32,7 +32,8 @@ body {
   margin-bottom: 0.4em !important;
 }
 
-.prose li,p {
+.prose li,
+p {
   margin-top: 0.4em !important;
   margin-bottom: 0.4em !important;
 }
@@ -43,7 +44,7 @@ body {
 
 .prose pre {
   margin-top: 0.67em !important;
-  margin-bottom: 1.00em !important;
+  margin-bottom: 1em !important;
 }
 
 .prose ol {
@@ -52,7 +53,7 @@ body {
 }
 
 .prose thead {
- background-color: rgba(10, 10, 150, 0.2);
+  background-color: rgba(10, 10, 150, 0.2);
 }
 
 .prose thead th {
@@ -66,14 +67,15 @@ body {
 }
 
 .prose h3::after {
-  content: "";
+  content: '';
   display: block;
   height: 1px;
   background-color: #ccc;
   margin: 10px 0;
 }
 
-.prose h3::after, h3::after {
+.prose h3::after,
+h3::after {
   margin-top: 10px;
 }
 
