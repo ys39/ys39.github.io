@@ -219,7 +219,7 @@ date: '2024-10-22'
 ### RustをWasmで動かす(npm)
 
 - 上記の方法でも動作させることができるが、npmを利用すれば、より簡単にデバッグやビルドを行うことができる。
-- [rust-webpack](https://github.com/rustwasm/rust-webpack-template)のテンプレートで最初試したが、途中でコンパイルエラーが発生し、お試しできなかったため、一旦放置。（このプロジェクト自体の更新が5年前なので、あまり利用しないほうが良いかもしれない）
+- [rust-webpack](https://github.com/rustwasm/rust-webpack-template)のテンプレートで最初試したが、途中でコンパイルエラーが発生し、一筋縄でお試しできなかったため、一旦放置。（このプロジェクト自体の更新が5年前なので、あまり利用しないほうが良いかもしれない）
 
 * [https://zenn.dev/yurioka/articles/3649c5190e33bc](https://zenn.dev/yurioka/articles/3649c5190e33bc) こちらの記事で`vite`と`wasm-pack`を使ってWasmを動かす方法を試したところ、問題なく動作した
 
@@ -239,7 +239,7 @@ date: '2024-10-22'
      "version": "1.0.0",
      "main": "index.js",
      "scripts": {
-       "dev": "vite",
+       "dev": "wasm-pack build ./src/wasm --target web && vite",
        "build": "wasm-pack build ./src/wasm --target web && vite build",
        "build-wasm": "wasm-pack build ./src/wasm --target web",
        "preview": "vite preview"

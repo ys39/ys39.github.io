@@ -34,7 +34,12 @@ export default async function PostPage({ params }: PostPageProps) {
           <div
             dangerouslySetInnerHTML={{ __html: postData.contentHtml || '' }}
           />
+          <hr className="h-px my-8 bg-gray-300 border-0 dark:bg-gray-700" />
+          <h4 className="text-center mb-2">😄 END 😀</h4>
         </article>
+        <div className="mt-6">
+          <Breadcrumb items={breadcrumbItems} />
+        </div>
       </main>
     </div>
   );
