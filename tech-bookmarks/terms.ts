@@ -2,17 +2,7 @@ import { TermsData } from '../src/app/types/terms';
 
 export const termsList: TermsData[] = [
   {
-    title: 'dotfiles',
-    date: '',
-    link: '',
-  },
-  {
     title: 'DynamoDB',
-    date: '',
-    link: '',
-  },
-  {
-    title: 'husky',
     date: '',
     link: '',
   },

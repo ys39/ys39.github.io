@@ -186,84 +186,132 @@ Component Modelについて調べる前に、Wasmの事前知識について整�
 
    1. cargoで新規プロジェクトを作成
 
-      ```bash
-      cargo new greet-user
-      cd greet-user
-      tree
-      # .
-      # ├── Cargo.toml
-      # └── src
-      # └── main.rs
-      ```
+        ```bash
+        cargo new greet-user
+        cd greet-user
+        tree
+        # .
+        # ├── Cargo.toml
+        # └── src
+        # └── main.rs
+        ```
 
    2. `Cargo.toml`の設定
 
-      ```toml
-      [package]
-      name = "greet-user"
-      version = "0.1.0"
-      edition = "2021"
+        ```toml
+        [package]
+        name = "greet-user"
+        version = "0.1.0"
+        edition = "2021"
 
-      [dependencies]
-      anyhow = "1.0.91"
-      clap = { version = "4.5.20", features = ["derive"] }
-      wasmtime = "26.0.0"
-      ```
+        [dependencies]
+        anyhow = "1.0.91"
+        clap = { version = "4.5.20", features = ["derive"] }
+        wasmtime = "26.0.0"
+        ```
 
    3. `src/main.rs`の記述
 
       - 実行時に`wasm`ファイルを読み込み、`greet`関数を呼び出す。
 
-      ```rust
-      use anyhow::Result;
-      use clap::Parser;
-      use wasmtime::component::{Component, Linker, TypedFunc};
-      use wasmtime::{Engine, Store};
+        ```rust
+        use anyhow::Result;
+        use clap::Parser;
+        use wasmtime::component::{Component, Linker, TypedFunc};
+        use wasmtime::{Engine, Store};
 
-      #[derive(Parser, Debug)]
-      struct Args {
-          wasm_file: String,
-      }
+        #[derive(Parser, Debug)]
+        struct Args {
+            wasm_file: String,
+        }
 
-      fn start(args: Args) -> Result<()> {
-          let engine = Engine::default();
-          let component = Component::from_file(&engine, &args.wasm_file)?;
+        fn start(args: Args) -> Result<()> {
+            let engine = Engine::default();
+            let component = Component::from_file(&engine, &args.wasm_file)?;
 
-          let linker = Linker::new(&engine);
-          let mut store = Store::new(&engine, ());
-          let instance = linker.instantiate(&mut store, &component)?;
+            let linker = Linker::new(&engine);
+            let mut store = Store::new(&engine, ());
+            let instance = linker.instantiate(&mut store, &component)?;
 
-          let greetable_index = instance
-              .get_export(
-                  &mut store,
-                  None,
-                  "component:cargo-component-practice/greetable",
-              )
-              .unwrap();
+            let greetable_index = instance
+                .get_export(
+                    &mut store,
+                    None,
+                    "component:cargo-component-practice/greetable",
+                )
+                .unwrap();
 
-          let greet_index = instance
-              .get_export(&mut store, Some(&greetable_index), "greet")
-              .unwrap();
+            let greet_index = instance
+                .get_export(&mut store, Some(&greetable_index), "greet")
+                .unwrap();
 
-          let greet: TypedFunc<(String,), (String,)> =
-              instance.get_typed_func(&mut store, greet_index).unwrap();
+            let greet: TypedFunc<(String,), (String,)> =
+                instance.get_typed_func(&mut store, greet_index).unwrap();
 
-          let argument = "Hoge!".to_string();
-          let (return_value,) = greet.call(&mut store, (argument,))?;
-          greet.post_return(&mut store)?;
-          println!("{return_value}");
+            let argument = "Hoge!".to_string();
+            let (return_value,) = greet.call(&mut store, (argument,))?;
+            greet.post_return(&mut store)?;
+            println!("{return_value}");
 
-          Ok(())
-      }
+            Ok(())
+        }
 
-      fn main() {
-          let args = Args::parse();
+        fn main() {
+            let args = Args::parse();
 
-          if let Err(e) = start(args) {
-              eprintln!("Error: {}", e);
-          }
-      }
-      ```
+            if let Err(e) = start(args) {
+                eprintln!("Error: {}", e);
+            }
+        }
+        ```
+
+      * `wasmtime`というランタイムを利用して、Wasmを実行している。
+      * [wasmtime in Rust](https://docs.wasmtime.dev/lang-rust.html) がコードの参考になる。
+      * クレート内部の関数については[wasmtime 26.0.0](https://docs.rs/wasmtime/26.0.0/wasmtime/all.html) が参考になる。
+
+        ```rust
+        // wasmtimeのエンジンを作成
+        let engine = Engine::default();
+        // file が指すディスク上の wasm ファイルから新しい WebAssembly コンポーネントをコンパイルする
+        let component = Component::from_file(&engine, &args.wasm_file)?;
+        // 指定されたEngine用の新しいリンカーを作成する。
+        let linker = Linker::new(&engine);
+        // 指定されたEngineと提供されたデータに関連付けられる新しいStoreを作成する。
+        let mut store = Store::new(&engine, ());
+        // 指定されたストアに指定されたコンポーネントをインスタンス化する。
+        let instance = linker.instantiate(&mut store, &component)?;
+        ```
+
+      * instanceの実装については[Struct Instance](https://docs.rs/wasmtime/26.0.0/wasmtime/component/struct.Instance.html)が参考になる。
+
+        ```rust
+        // 指定されたインスタンス内で指定された名前("component:cargo-component-practice/greetable")を検索する。
+        let greetable_index = instance
+            .get_export(
+                &mut store,
+                None,
+                "component:cargo-component-practice/greetable",
+            )
+            .unwrap();
+
+        // 第二引数で指定したComponentExportIndexインスタンス(greetable_index)から指定された名前("greet")を検索する。
+        let greet_index = instance
+            .get_export(&mut store, Some(&greetable_index), "greet")
+            .unwrap();
+
+        // エクスポートされたgreet関数をラップしたオブジェクトを作成する
+        let greet: TypedFunc<(String,), (String,)> =
+            instance.get_typed_func(&mut store, greet_index).unwrap();
+        ```
+      * greet関数を呼び出す 
+        ```rust
+        let argument = "Hoge!".to_string();
+        // Sturct TypedFunc -> callメソッドを呼び出して実行
+        let (return_value,) = greet.call(&mut store, (argument,))?;
+        // Func::call が正常に完了した後に呼び出される必須のメソッド。 エンベッダが戻り値の処理を終えた後、この関数を呼び出す必要がある。
+        greet.post_return(&mut store)?;
+        println!("{return_value}");
+        ```
 
 8. メインプロジェクトを実行
 
