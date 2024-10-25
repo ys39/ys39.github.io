@@ -54,6 +54,55 @@ date: '2024-10-19'
 - 管理方法の選択肢を検討する。
 - 必要なdotfilesをリストアップし、整理する。(公開されているdotfilesが多いので、それを参考にしていく)
 
+### 2024/10/25 追記
+
+- dotfilesを下記に更新
+
+  ```bash
+  tree -a -I .git
+
+  # .
+  # ├── .Brewfile
+  # ├── .bash_aliases
+  # ├── .bash_profile
+  # ├── .bashrc
+  # ├── .commit_template
+  # ├── .editorconfig
+  # ├── .gitconfig
+  # ├── .gitconfig.local
+  # ├── .gitignore
+  # ├── .gitignore_global
+  # ├── .vimrc
+  # ├── .wslconfig
+  # ├── .zsh_aliases
+  # ├── .zshrc
+  # ├── Makefile
+  # ├── README.md
+  # └── setup.sh
+  ```
+
+- 反映手順 .. Makefileに従って、make を実行する
+
+  ```bash
+  make
+
+  # Setting up dotfiles...
+  # sh ./setup.sh
+  # Creating symlinks for bash and zsh...
+  # ~/.bashrc already exists, skipping...
+  # ~/.bash_profile already exists, skipping...
+  # ~/.bash_aliases already exists, skipping...
+  # ~/.zshrc already exists, skipping...
+  # ~/.zsh_aliases already exists, skipping...
+  # ~/.vimrc already exists, skipping...
+  # ~/.editorconfig already exists, skipping...
+  # ~/.commit_template already exists, skipping...
+  # ~/.gitconfig already exists, skipping...
+  # ~/.gitignore_global already exists, skipping...
+  # ~/.gitconfig.local already exists, skipping...
+  # All symlinks created successfully!
+  ```
+
 ### 参考
 
 - [https://note.com/dev_onecareer/n/ncc5d43c83d17](https://note.com/dev_onecareer/n/ncc5d43c83d17)
