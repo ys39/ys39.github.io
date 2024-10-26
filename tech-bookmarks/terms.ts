@@ -52,7 +52,12 @@ export const termsList: TermsData[] = [
     link: '',
   },
   {
-    title: 'Playwright',
+    title: 'DIコンテナ',
+    date: '',
+    link: '',
+  },
+  {
+    title: '静的/動的ディスパッチ',
     date: '',
     link: '',
   },
