@@ -25,7 +25,7 @@ export default function WeblogPage() {
           {Array.from(tags).map((tag) => (
             <div key={tag}>
               <div className="">
-                <h2 className="bg-white text-center text-gray-800 text-sm border border-purple-800 font-mono font-bold me-2 px-2.5 py-2 rounded-full dark:bg-purple-900 dark:text-purple-300 hover:bg-purple-800 hover:text-white cursor-pointer">
+                <h2 className="bg-white text-center text-gray-800 text-sm border border-purple-800 font-mono font-bold me-2 px-2.5 py-2 rounded-full dark:text-gray-800 hover:bg-purple-800 hover:text-white cursor-pointer">
                   <Link href={`/weblog/tag/${tag}`}>#{tag}</Link>
                 </h2>
               </div>

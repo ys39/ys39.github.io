@@ -37,7 +37,7 @@ export default async function PostPage({ params }: PostPageProps) {
                 <Link key={index} href={`/weblog/tag/${tag}`}>
                   <span
                     key={index}
-                    className="text-gray-800 text-sm border border-purple-800 font-mono font-bold me-2 px-2.5 py-2 rounded-full dark:bg-purple-900 dark:text-purple-300 hover:bg-purple-800 hover:text-white cursor-pointer"
+                    className="text-gray-800 text-sm border border-purple-800 font-mono font-bold me-2 px-2.5 py-2 rounded-full dark:text-gray-800 hover:bg-purple-800 hover:text-white cursor-pointer"
                   >
                     #{tag}
                   </span>

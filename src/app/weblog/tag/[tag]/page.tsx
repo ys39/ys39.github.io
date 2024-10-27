@@ -26,7 +26,7 @@ export default async function PostPage({ params }: TagPageProps) {
       <main className="container mx-auto px-4 py-10">
         <Breadcrumb items={breadcrumbItems} />
         <div className="mb-8 text-center">
-          <span className="text-gray-800 text-xl border border-purple-800 font-mono font-bold me-2 px-4 py-2 rounded-full dark:bg-purple-900 dark:text-purple-300 hover:bg-purple-800 hover:text-white cursor-pointer">
+          <span className="text-gray-800 text-xl border border-purple-800 font-mono font-bold me-2 px-4 py-2 rounded-full dark:text-gray-800 hover:bg-purple-800 hover:text-white cursor-pointer">
             #{tag}
           </span>
         </div>
