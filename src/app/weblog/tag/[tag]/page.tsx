@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import Link from 'next/link';
 import matter from 'gray-matter';
 import { TagRelatedData } from '../../../types/post';
 import Breadcrumb from '../../../../components/breadcrumb';
@@ -39,16 +40,16 @@ export default async function PostPage({ params }: TagPageProps) {
             >
               <div className="p-6">
                 <h2 className="text-xl font-semibold mb-2 text-gray-800">
-                  {post.title}
+                  <Link href={`/weblog/${post.slug}`}>{post.title}</Link>
                 </h2>
                 <p className="text-sm text-gray-600 mb-4">{post.date}</p>
                 <div className="mt-4">
-                  <a
+                  <Link
                     href={`/weblog/${post.slug}`}
                     className="text-blue-700 hover:text-blue-700 font-medium float-end pb-2"
                   >
                     &gt;&gt; Read More
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
