@@ -1,7 +1,7 @@
 ---
 title: 'Cassandraへ入門'
 date: '2024-10-07'
-tags: ['Cassandra', 'DB', 'NoSQL', '入門']
+tags: ['Cassandra', 'DB', 'NoSQL', 'beginners']
 ---
 
 ### はじめに

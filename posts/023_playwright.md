@@ -1,7 +1,7 @@
 ---
 title: 'Playwrightへ入門'
 date: '2024-10-25'
-tags: ['Playwright', '入門', 'テスト']
+tags: ['Playwright', 'beginners', 'testing']
 ---
 
 ### はじめに

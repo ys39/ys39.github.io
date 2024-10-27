@@ -1,7 +1,7 @@
 ---
 title: 'gRPCへ入門'
 date: '2024-10-21'
-tags: ['gRPC','入門']
+tags: ['gRPC','beginners']
 ---
 
 ### はじめに

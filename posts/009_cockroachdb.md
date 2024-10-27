@@ -1,7 +1,7 @@
 ---
 title: 'CockroachDBへ入門'
 date: '2024-10-08'
-tags: ['DB', 'NewSQL', 'CockroachDB', '入門']
+tags: ['DB', 'NewSQL', 'CockroachDB', 'beginners']
 ---
 
 ### はじめに
