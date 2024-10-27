@@ -84,6 +84,10 @@ async function fetchPostData(): Promise<{
           title: data.title,
           date: data.date,
         });
+        // dateの降順で並び替え
+        tagRelatedList[tag].sort(
+          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+        );
       });
     }
   });
