@@ -59,6 +59,7 @@ function getPostsData(): PostData[] {
         slug: filename.replace('.md', ''),
         title: data.title,
         date: data.date,
+        tags: data.tags ?? [],
       };
     })
     .reverse(); // (新しい順に表示するため)

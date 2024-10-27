@@ -1,6 +1,7 @@
 ---
 title: 'oapi-codegen'
 date: '2024-10-24'
+tags: ['Golang','OpenAPI']
 ---
 
 ### はじめに

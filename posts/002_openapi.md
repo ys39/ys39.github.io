@@ -1,6 +1,7 @@
 ---
 title: 'OpenAPIへ入門'
 date: '2024-10-01'
+tags: ['入門', 'OpenAPI']
 ---
 
 ### はじめに

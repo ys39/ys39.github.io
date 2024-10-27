@@ -1,6 +1,7 @@
 ---
 title: 'dotfiles'
 date: '2024-10-19'
+tags: ['dotfiles']
 ---
 
 ### はじめに

@@ -1,6 +1,7 @@
 ---
 title: 'Git tips'
 date: '2024-10-20'
+tags: ['Git']
 ---
 
 ### はじめに

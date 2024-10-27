@@ -8,6 +8,7 @@ import rehypeHighlight from 'rehype-highlight';
 import remarkGfm from 'remark-gfm';
 import { PostData } from '../../types/post';
 import Breadcrumb from '../../../components/breadcrumb';
+import Link from 'next/link';
 
 interface PostPageProps {
   params: {
@@ -30,7 +31,21 @@ export default async function PostPage({ params }: PostPageProps) {
         <article className="prose prose-lg max-w-none">
           <h2 className="text-center mb-2">{postDataTitle}</h2>
           <p className="text-center text-gray-600">公開日：{postData.date}</p>
-          <hr className="h-px my-8 bg-gray-300 border-0 dark:bg-gray-700" />
+          {postData.tags && postData.tags.length > 0 && (
+            <div className="flex flex-wrap gap-2">
+              {postData.tags.map((tag, index) => (
+                <Link key={index} href={`/weblog/tag/${tag}`}>
+                  <span
+                    key={index}
+                    className="text-gray-800 text-sm border border-purple-800 font-mono font-bold me-2 px-2.5 py-2 rounded-full dark:bg-purple-900 dark:text-purple-300 hover:bg-purple-800 hover:text-white cursor-pointer"
+                  >
+                    #{tag}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          )}
+          <hr className="h-px my-6 bg-gray-300 border-0 dark:bg-gray-700" />
           <div
             dangerouslySetInnerHTML={{ __html: postData.contentHtml || '' }}
           />
@@ -61,6 +76,7 @@ async function getPostData(slug: string): Promise<PostData> {
     slug,
     title: data.title,
     date: data.date,
+    tags: data.tags ?? [],
     contentHtml,
   };
 }

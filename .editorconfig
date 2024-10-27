@@ -3,6 +3,11 @@
 # top-most EditorConfig file
 root = false
 
+[*.tsx]
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = false
+
 [*.md]
 indent_style = space
 indent_size = 4

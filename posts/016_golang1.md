@@ -1,6 +1,7 @@
 ---
 title: 'Golang 整理 1'
 date: '2024-10-18'
+tags: ['Golang']
 ---
 
 ### はじめに

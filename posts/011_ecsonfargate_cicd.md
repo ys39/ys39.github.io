@@ -1,6 +1,7 @@
 ---
 title: 'ECS on FargateでCICD'
 date: '2024-10-11'
+tags: ['ECS', 'Fargate', 'CICD']
 ---
 
 ### はじめに

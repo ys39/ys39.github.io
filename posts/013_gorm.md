@@ -1,6 +1,7 @@
 ---
-title: 'GORM 入門'
+title: 'GORMへ入門'
 date: '2024-10-13'
+tags: ['Golang', 'GORM', 'ORM', '入門']
 ---
 
 ### はじめに

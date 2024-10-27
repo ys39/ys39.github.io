@@ -1,6 +1,7 @@
 ---
 title: 'Next.jsの整理'
 date: '2024-10-05'
+tags: ['Next.js']
 ---
 
 ### はじめに

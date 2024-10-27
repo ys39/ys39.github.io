@@ -1,6 +1,7 @@
 ---
 title: 'ポートフォリオを作成'
 date: '2024-09-30'
+tags: ['Portfolio', 'Weblog']
 ---
 
 ### はじめに

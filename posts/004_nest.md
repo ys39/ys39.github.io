@@ -1,6 +1,7 @@
 ---
 title: 'NestJSでBFFを構築'
 date: '2024-10-03'
+tags: ['NestJS', 'BFF']
 ---
 
 ### はじめに

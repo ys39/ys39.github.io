@@ -1,6 +1,7 @@
 ---
 title: 'ECS on Fargateで手動デプロイ'
 date: '2024-10-09'
+tags: ['ECS', 'Fargate']
 ---
 
 ### はじめに

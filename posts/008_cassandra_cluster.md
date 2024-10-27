@@ -1,6 +1,7 @@
 ---
 title: 'Cassandra Cluster'
 date: '2024-10-07'
+tags: ['Cassandra', 'DB', 'NoSQL']
 ---
 
 ### はじめに
