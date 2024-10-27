@@ -116,6 +116,8 @@ tags: ['Portfolio', 'Weblog']
     ```
 
 ### まとめ
+* 自身のポートフォリオにタグ機能を追加した。Dynamic Routesを利用することで、短時間で実装することができた。
+* ポートフォリオページの見やすさを今後は考慮していきたい。
 
 ### 参考
 - [https://penguinchord.com/blog/web-programming/nextjs-tagged-posts-howto](https://penguinchord.com/blog/web-programming/nextjs-tagged-posts-howto)
