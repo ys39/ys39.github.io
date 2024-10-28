@@ -4,8 +4,13 @@ import Link from 'next/link';
 import matter from 'gray-matter';
 import Breadcrumb from '../../../components/breadcrumb';
 
+type TagsData = {
+  tags: string[];
+  tagsCount: { [key: string]: number };
+};
+
 export default function WeblogPage() {
-  const tags = getTagsData();
+  const { tags, tagsCount } = getTagsData();
   const breadcrumbItems = [
     { name: 'Home', href: '/' },
     { name: 'Weblog', href: '/weblog' },
@@ -26,7 +31,9 @@ export default function WeblogPage() {
             <div key={tag}>
               <div className="">
                 <h2 className="bg-white text-center text-gray-800 text-sm border border-purple-800 font-mono font-bold me-2 px-2.5 py-2 rounded-full dark:text-gray-800 hover:bg-purple-800 hover:text-white cursor-pointer">
-                  <Link href={`/weblog/tag/${tag}`}>#{tag}</Link>
+                  <Link href={`/weblog/tag/${tag}`}>
+                    #{tag}({tagsCount[tag]})
+                  </Link>
                 </h2>
               </div>
             </div>
@@ -37,12 +44,13 @@ export default function WeblogPage() {
   );
 }
 
-function getTagsData(): Set<string> {
+function getTagsData(): TagsData {
   // posts以下のmdファイルをすべて取得
   const postsDirectory = path.join(process.cwd(), 'posts');
   const filenames = fs.readdirSync(postsDirectory);
   // 各mdファイルのtagsを取得
-  const tags = new Set<string>();
+  const tags = new Set<string>(); // 重複を除外するためにSetを使用
+  const tagsCount: { [key: string]: number } = {}; // タグの出現回数をカウント
   filenames.forEach((filename) => {
     const filePath = path.join(postsDirectory, filename);
     const fileContents = fs.readFileSync(filePath, 'utf8');
@@ -50,7 +58,15 @@ function getTagsData(): Set<string> {
     if (!data.tags) {
       return;
     }
-    data.tags.forEach((tag: string) => tags.add(tag));
+    data.tags.forEach((tag: string) => {
+      tagsCount[tag] = tagsCount[tag] ? tagsCount[tag] + 1 : 1;
+      tags.add(tag);
+    });
   });
-  return tags;
+  // tagsをソート
+  const sortedTags = Array.from(tags).sort((a, b) => a.localeCompare(b));
+  return {
+    tags: sortedTags,
+    tagsCount: tagsCount,
+  };
 }

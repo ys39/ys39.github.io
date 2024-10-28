@@ -32,7 +32,7 @@ export default async function PostPage({ params }: PostPageProps) {
           <h2 className="text-center mb-2">{postDataTitle}</h2>
           <p className="text-center text-gray-600">公開日：{postData.date}</p>
           {postData.tags && postData.tags.length > 0 && (
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 justify-center">
               {postData.tags.map((tag, index) => (
                 <Link key={index} href={`/weblog/tag/${tag}`}>
                   <span
