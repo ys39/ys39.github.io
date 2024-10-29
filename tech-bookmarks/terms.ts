@@ -4,52 +4,47 @@ export const termsList: TermsData[] = [
   {
     title: 'DynamoDB',
     date: '',
-    link: '',
-  },
-  {
-    title: 'Redis',
-    date: '',
-    link: '',
+    link: 'https://aws.amazon.com/jp/dynamodb/',
   },
   {
     title: 'SQS / SNS',
     date: '',
-    link: '',
+    link: 'https://aws.amazon.com/jp/sqs/features/',
   },
   {
     title: 'Cloudflare Vectorize',
     date: '',
-    link: '',
+    link: 'https://developers.cloudflare.com/vectorize/',
   },
   {
     title: 'Django',
     date: '',
-    link: '',
+    link: 'https://docs.djangoproject.com/ja/5.1/',
   },
   {
     title: 'CircleCI',
     date: '',
-    link: '',
+    link: 'https://circleci.com/docs/ja/',
   },
   {
     title: 'Terraform',
     date: '',
-    link: '',
+    link: 'https://www.terraform.io/',
   },
   {
     title: 'Istio',
     date: '',
-    link: '',
+    link: 'https://istio.io/',
   },
   {
-    title: 'パッケージマネージャの比較',
+    title: 'npm, yarn ...',
     date: '',
     link: '',
   },
   {
     title: 'emotion',
     date: '',
-    link: '',
+    link: 'https://emotion.sh/docs/introduction',
   },
   {
     title: 'DIコンテナ',
@@ -57,8 +52,23 @@ export const termsList: TermsData[] = [
     link: '',
   },
   {
-    title: '静的/動的ディスパッチ',
+    title: 'Taskfile',
     date: '',
-    link: '',
+    link: 'https://taskfile.dev/',
+  },
+  {
+    title: 'MoonBit',
+    date: '',
+    link: 'https://docs.moonbitlang.com/',
+  },
+  {
+    title: 'DuckDB',
+    date: '',
+    link: 'https://duckdb.org/docs/',
+  },
+  {
+    title: 'TiDB',
+    date: '',
+    link: 'https://docs.pingcap.com/',
   },
 ];

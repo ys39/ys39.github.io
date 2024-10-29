@@ -1,6 +1,8 @@
 import { termsList } from '../../../tech-bookmarks/terms';
 import { TermsData } from '../types/terms';
 import Breadcrumb from '../../components/breadcrumb';
+import Link from 'next/link';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 
 export default function WeblogPage() {
   const terms = getTerms();
@@ -20,17 +22,28 @@ export default function WeblogPage() {
           I will document the technologies and topics planned for future
           research.
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {terms.map((term) => (
             <div
               key={term.title}
               className="bg-white rounded-lg shadow-lg overflow-hidden"
             >
               <div className="p-6">
-                <h2 className="text-xl font-semibold mb-2 text-gray-800">
+                <h2 className="text-base font-semibold mb-2 text-gray-800">
                   {term.title}
                 </h2>
-                <div className="mt-4"></div>
+                {term.link && term.link.length > 0 && (
+                  <div className="mt-4">
+                    <Link
+                      href={`${term.link}`}
+                      className="text-blue-700 hover:text-blue-700 font-medium float-end flex items-center pb-2"
+                      target="_blank"
+                      referrerPolicy="no-referrer"
+                    >
+                      Link <FaExternalLinkAlt className="float-end ml-2" />
+                    </Link>
+                  </div>
+                )}
               </div>
             </div>
           ))}
