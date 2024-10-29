@@ -4,10 +4,10 @@ import Link from 'next/link';
 import matter from 'gray-matter';
 import Breadcrumb from '../../../components/breadcrumb';
 
-type TagsData = {
+interface TagsData {
   tags: string[];
   tagsCount: { [key: string]: number };
-};
+}
 
 export default function WeblogPage() {
   const { tags, tagsCount } = getTagsData();
