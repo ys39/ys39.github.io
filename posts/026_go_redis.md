@@ -15,7 +15,7 @@ tags: ['Golang', 'Redis', 'NoSQL']
 * 複数のコマンドを一つのトランザクションとして実行することができる
 
 ### Redisを使う環境の構築
-1. docker-compose.ymlでRedisを起動する
+1. `docker-compose.yml`でRedisを起動する
     ```yaml
     version: "3.8"
 
@@ -50,15 +50,27 @@ tags: ['Golang', 'Redis', 'NoSQL']
 
 ### GoでRedisを扱う(基本操作)
 * [go-redis](https://github.com/redis/go-redis) と [rueidis](https://github.com/redis/rueidis) の2つがRedis公式のGo言語用ライブラリとして用意されており、比較的ドキュメントが充実しているgo-redisの方を使ってみる。
+* `go-redis`のメソッドについては、[Document](https://pkg.go.dev/github.com/redis/go-redis/v9#section-readme)が参考になる。(例えば`Set`や`Get`だと下記となっている)
+    ```go
+    func (Pipeline) Set
+    func (c Pipeline) Set(ctx context.Context, key string, value interface{}, expiration time.Duration) *StatusCmd
+    // 第一引数: コンテキスト, 第二引数: key, 第三引数: value, 第四引数: 有効期限
+    // 戻り値: StatusCmd型(Err(), Result()など)
 
-1. go-redisのインストール
+    func (Client) Get
+    func (c Client) Get(ctx context.Context, key string) *StringCmd
+    // 第一引数: コンテキスト, 第二引数: key
+    // 戻り値: StringCmd型(Err(), Int()など)
+    ```
+
+1. `go-redis`のインストール
     ```bash
     mkdir go-redis-practice && cd go-redis-practice
     go mod init go-redis-practice
     go get github.com/redis/go-redis/v9
     ```
 2. サンプルコード
-    * 下記では、localhost:6379で開かれているRedisに接続し、key-valueの簡単な操作(Stringsに対するSet, Get, Del)を行っている。
+    * 下記では、`localhost:6379`で開かれているRedisに接続し、key-valueの簡単な操作(Stringsに対する`Set`, `Get`, `Del`)を行っている。
     * `Set`や`Del`などの変更操作は、`Err()`メソッドでエラーを取得できる。
     * `Get`などの取得操作は、`Result()`メソッドで結果を取得できる。
     ```go
