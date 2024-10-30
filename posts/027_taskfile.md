@@ -90,8 +90,8 @@ tags: ['Golang', 'Taskfile', 'beginners', 'dotfiles']
     ```
 
 ### dotfilesでの利用
-https://github.com/ys39/dotfiles ではMakefileを用いていたが、Taskfileに変更してみる（現状は、`setup.sh`をMakefileで実行している）また、シンボリックリンクは一般的には`ln -s`を使うが、調べると`stow`というツールがあるらしいので、そちらも試してみる。
-
+* https://github.com/ys39/dotfiles ではMakefileを用いていたが、Taskfileに変更してみる（現状は、`setup.sh`をMakefileで実行している）また、シンボリックリンクは一般的には`ln -s`を使うが、調べると`stow`というツールがあるらしいので、そちらも試してみる。
+* 今回作成した、dotfilesのリポジトリは[こちら](https://github.com/ys39/dotfiles_taskver)
 * ディレクトリ構成
     * `stow`を利用するため、用途ごとにディレクトリを分ける。
     * `stow --dotfiles`を使うことで、`dot-`から始まるファイルを`.`から始まるファイルへのシンボリックリンクを作成できる。
