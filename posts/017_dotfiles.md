@@ -104,6 +104,10 @@ tags: ['dotfiles']
   # All symlinks created successfully!
   ```
 
+### 2024/10/30 追記
+* https://github.com/ys39/dotfiles_taskver
+* こちらのリポジトリにてgo-taskを用いて管理するように変更
+
 ### 参考
 
 - [https://note.com/dev_onecareer/n/ncc5d43c83d17](https://note.com/dev_onecareer/n/ncc5d43c83d17)
