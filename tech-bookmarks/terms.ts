@@ -37,11 +37,6 @@ export const termsList: TermsData[] = [
     link: 'https://istio.io/',
   },
   {
-    title: 'npm, yarn ...',
-    date: '',
-    link: '',
-  },
-  {
     title: 'emotion',
     date: '',
     link: 'https://emotion.sh/docs/introduction',
@@ -50,11 +45,6 @@ export const termsList: TermsData[] = [
     title: 'DIコンテナ',
     date: '',
     link: '',
-  },
-  {
-    title: 'Taskfile',
-    date: '',
-    link: 'https://taskfile.dev/',
   },
   {
     title: 'MoonBit',
