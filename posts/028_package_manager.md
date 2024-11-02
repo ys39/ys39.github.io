@@ -6,7 +6,7 @@ tags: ['npm', 'yarn', 'pnpm']
 
 ### はじめに
 * OSの設定やアプリケーションの環境構築などにPackage Managerを利用することがある。OSの場合だと、macOS -> homebrew, Debian -> apt/snapが有名である。また、アプリケーションの場合だと、JavaScript -> npm, Rust -> Cargo, PHP -> Composerなどがあり、依存関係の解消やアップデートを日々行う上で、非常に重要なツールである。
-* JavaScript, TypeScriptを扱う上で、npmは馴染み深く、個人的によく利用していたが、JavaScriptのPackage Managerとして、yarn, bun, pnpmなどもあり、そちらは正直に言ってあまり利用したことがなく、その差異がわかっていない。そこで、今回はその差異を調査して、簡単にまとめてみる。
+* JavaScript, TypeScriptを扱う上で、npmは馴染み深く、個人的によく利用していたが、JavaScriptのPackage Managerとして、yarn, pnpmなどもあり、そちらは正直に言ってあまり利用したことがなく、その差異がわかっていない。そこで、今回はその差異を調査して、簡単にまとめてみる。
 
 ### JavaScript の Package Manager
 `npm`, `yarn`, `pnpm`がある。
@@ -30,13 +30,13 @@ tags: ['npm', 'yarn', 'pnpm']
     * インストールのプロセスがパッケージ毎に行われるため、高速に動作する。
     ![pnpm2](../posts/pnpm2.svg)
 
-### TODO
-* Deno, Bun についても触れておきたい。
-
 ### まとめ
+* 大体、JavaScriptのPackage Managerの違いについて、その誕生の背景や特徴について学ぶことができた。また、利用するうえでは、基本的に`npm`で問題はないが、大規模プロジェクトやスピードやメモリを意識しないといけない場合などに、`yarn`や`pnpm`を利用することで、効果を発揮することができる。ただし、それは確実に保証するものでもなく、`npm`も日に日に改善されているため、その辺りも考慮して利用することが重要である。
+* JavaScriptのPackage Managerについては洗い出すことができたので、次は、JavaScriptのランタイムについて、`Node.js`意外に`Deno`や`Bun`といったものがあるので、そちらも調査してみる。
 
 ### 参考
 * https://zenn.dev/bizlink/articles/14a65815472bcd
 * [An introduction to the npm package manager](https://nodejs.org/en/learn/getting-started/an-introduction-to-the-npm-package-manager)
 * [Yarn Reference](https://classic.yarnpkg.com/en/)
 * [Yarn: A new package manager for JavaScript](https://engineering.fb.com/2016/10/11/web/yarn-a-new-package-manager-for-javascript/)
+* https://zenn.dev/nakasyou/articles/you_dont_need_node
