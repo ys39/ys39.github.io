@@ -9,6 +9,7 @@ import remarkGfm from 'remark-gfm';
 import { PostData } from '../../types/post';
 import Breadcrumb from '../../../components/breadcrumb';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 
 interface PostPageProps {
   params: {
@@ -18,6 +19,11 @@ interface PostPageProps {
 
 export default async function PostPage({ params }: PostPageProps) {
   const postData = await getPostData(params.slug);
+
+  if (!postData.isOpen) {
+    notFound();
+  }
+
   const postDataTitle = postData.title;
   const breadcrumbItems = [
     { name: 'Home', href: '/' },
@@ -78,6 +84,7 @@ async function getPostData(slug: string): Promise<PostData> {
     date: data.date,
     tags: data.tags ?? [],
     contentHtml,
+    isOpen: data.isOpen ?? true,
   };
 }
 

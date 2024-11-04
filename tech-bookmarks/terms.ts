@@ -47,11 +47,6 @@ export const termsList: TermsData[] = [
     link: '',
   },
   {
-    title: 'MoonBit',
-    date: '',
-    link: 'https://docs.moonbitlang.com/',
-  },
-  {
     title: 'DuckDB',
     date: '',
     link: 'https://duckdb.org/docs/',

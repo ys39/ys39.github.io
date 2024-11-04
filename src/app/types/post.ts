@@ -4,6 +4,7 @@ export interface PostData {
   date: string;
   tags?: string[];
   contentHtml?: string;
+  isOpen?: boolean;
 }
 
 export interface TagRelatedData {

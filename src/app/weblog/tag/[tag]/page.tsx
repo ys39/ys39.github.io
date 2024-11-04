@@ -36,22 +36,36 @@ export default async function PostPage({ params }: TagPageProps) {
           {posts.map((post) => (
             <div
               key={post.slug}
-              className="bg-white rounded-lg shadow-lg overflow-hidden"
+              className={`${post.isOpen ? '' : 'bg-slate-200'} "bg-white rounded-lg shadow-lg overflow-hidden"`}
             >
-              <div className="p-6">
-                <h2 className="text-xl font-semibold mb-2 text-gray-800">
-                  <Link href={`/weblog/${post.slug}`}>{post.title}</Link>
-                </h2>
-                <p className="text-sm text-gray-600 mb-4">{post.date}</p>
-                <div className="mt-4">
-                  <Link
-                    href={`/weblog/${post.slug}`}
-                    className="text-blue-700 hover:text-blue-700 font-medium float-end pb-2"
-                  >
-                    &gt;&gt; Read More
-                  </Link>
+              {post.isOpen ? (
+                <div className="p-6">
+                  <h2 className="text-xl font-semibold mb-2 text-gray-800">
+                    <Link href={`/weblog/${post.slug}`}>{post.title}</Link>
+                  </h2>
+                  <p className="text-sm text-gray-600 mb-4">{post.date}</p>
+                  <div className="mt-4">
+                    <Link
+                      href={`/weblog/${post.slug}`}
+                      className="text-blue-700 hover:text-blue-700 font-medium float-end pb-2"
+                    >
+                      &gt;&gt; Read More
+                    </Link>
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <div className="p-6">
+                  <h2 className="text-xl font-semibold mb-2 text-gray-400">
+                    {post.title}
+                  </h2>
+                  <p className="text-sm text-gray-400 mb-4">{post.date}</p>
+                  <div className="mt-4">
+                    <span className="text-gray-400 font-medium float-end pb-2">
+                      Work In Progress
+                    </span>
+                  </div>
+                </div>
+              )}
             </div>
           ))}
         </div>
@@ -84,6 +98,7 @@ async function fetchPostData(): Promise<{
           slug: filename.replace('.md', ''),
           title: data.title,
           date: data.date,
+          isOpen: data.isOpen ?? true,
         });
         // dateの降順で並び替え
         tagRelatedList[tag].sort(
