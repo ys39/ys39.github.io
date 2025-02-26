@@ -12,6 +12,11 @@ export const termsList: TermsData[] = [
     link: 'https://aws.amazon.com/jp/sqs/features/',
   },
   {
+    title: 'Lambda',
+    date: '',
+    link: 'https://aws.amazon.com/jp/lambda/',
+  },
+  {
     title: 'Cloudflare Vectorize',
     date: '',
     link: 'https://developers.cloudflare.com/vectorize/',
@@ -55,5 +60,15 @@ export const termsList: TermsData[] = [
     title: 'TiDB',
     date: '',
     link: 'https://docs.pingcap.com/',
+  },
+  {
+    title: 'OpenTelemetry',
+    date: '',
+    link: 'https://opentelemetry.io/ja/',
+  },
+  {
+    title: 'localstack',
+    date: '',
+    link: 'https://localstack.cloud/',
   },
 ];
