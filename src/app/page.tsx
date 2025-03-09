@@ -18,7 +18,7 @@ export default function Home() {
             />
           </div>
           <h1 className="text-4xl font-bold mt-4 dark:text-gray-700">Sen</h1>
-          <p className="text-gray-700 mt-2">Web Developer | Programmer</p>
+          <p className="text-gray-700 mt-2">Web Developer</p>
         </section>
 
         {/* About Me Section */}
