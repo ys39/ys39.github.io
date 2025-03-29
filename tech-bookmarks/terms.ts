@@ -7,11 +7,6 @@ export const termsList: TermsData[] = [
     link: 'https://aws.amazon.com/jp/dynamodb/',
   },
   {
-    title: 'SQS / SNS',
-    date: '',
-    link: 'https://aws.amazon.com/jp/sqs/features/',
-  },
-  {
     title: 'Lambda',
     date: '',
     link: 'https://aws.amazon.com/jp/lambda/',
@@ -67,8 +62,13 @@ export const termsList: TermsData[] = [
     link: 'https://opentelemetry.io/ja/',
   },
   {
-    title: 'localstack',
+    title: 'BIツール',
     date: '',
-    link: 'https://localstack.cloud/',
+    link: '',
+  },
+  {
+    title: 'MCP',
+    date: '',
+    link: '',
   },
 ];
