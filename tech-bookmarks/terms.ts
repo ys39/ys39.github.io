@@ -71,4 +71,9 @@ export const termsList: TermsData[] = [
     date: '',
     link: '',
   },
+  {
+    title: 'contentsquare',
+    date: '',
+    link: 'https://contentsquare.com/jp/',
+  },
 ];
