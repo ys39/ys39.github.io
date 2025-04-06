@@ -57,11 +57,6 @@ export const termsList: TermsData[] = [
     link: 'https://docs.pingcap.com/',
   },
   {
-    title: 'OpenTelemetry',
-    date: '',
-    link: 'https://opentelemetry.io/ja/',
-  },
-  {
     title: 'BIツール',
     date: '',
     link: '',
@@ -70,10 +65,5 @@ export const termsList: TermsData[] = [
     title: 'MCP',
     date: '',
     link: '',
-  },
-  {
-    title: 'contentsquare',
-    date: '',
-    link: 'https://contentsquare.com/jp/',
   },
 ];
