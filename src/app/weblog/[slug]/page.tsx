@@ -6,6 +6,8 @@ import rehypeStringify from 'rehype-stringify'; // rehypeからHTMLに変換
 import remarkRehype from 'remark-rehype';
 import rehypeHighlight from 'rehype-highlight';
 import remarkGfm from 'remark-gfm';
+import { visit } from 'unist-util-visit';
+import type { Root, Element } from 'hast';
 import { PostData } from '../../types/post';
 import Breadcrumb from '../../../components/breadcrumb';
 import Link from 'next/link';
@@ -66,6 +68,23 @@ export default async function PostPage({ params }: PostPageProps) {
   );
 }
 
+// リンクにtarget="_blank"を追加するカスタムrehypeプラグイン
+function rehypeTargetBlank() {
+  return (tree: Root) => {
+    visit(tree, 'element', (node: Element) => {
+      if (
+        node.tagName === 'a' &&
+        node.properties &&
+        typeof node.properties.href === 'string'
+      ) {
+        // 外部リンクにtarget="_blank"とrel="noopener noreferrer"を追加
+        node.properties.target = '_blank';
+        node.properties.rel = 'noopener noreferrer';
+      }
+    });
+  };
+}
+
 async function getPostData(slug: string): Promise<PostData> {
   const postsDirectory = path.join(process.cwd(), 'posts');
   const filePath = path.join(postsDirectory, `${slug}.md`);
@@ -75,6 +94,7 @@ async function getPostData(slug: string): Promise<PostData> {
     .use(remarkGfm) // テーブルなどのGFM機能を有効化
     .use(remarkRehype) // AST(mdast) を HTML の AST(hast) に変換
     .use(rehypeHighlight) // AST(hast)に対して Syntax Highlight を適用
+    .use(rehypeTargetBlank) // リンクにtarget="_blank"を追加
     .use(rehypeStringify) // AST(hast) を HTML に変換
     .process(content);
   const contentHtml = processedContent.toString();
