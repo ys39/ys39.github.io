@@ -47,11 +47,6 @@ export const termsList: TermsData[] = [
     link: '',
   },
   {
-    title: 'DuckDB',
-    date: '',
-    link: 'https://duckdb.org/docs/',
-  },
-  {
     title: 'TiDB',
     date: '',
     link: 'https://docs.pingcap.com/',
@@ -65,5 +60,10 @@ export const termsList: TermsData[] = [
     title: 'MCP',
     date: '',
     link: '',
+  },
+  {
+    title: 'dbt',
+    date: '',
+    link: 'https://www.getdbt.com/',
   },
 ];
