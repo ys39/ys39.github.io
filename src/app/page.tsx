@@ -2,13 +2,99 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 
+// 型定義
+type SkillsType = {
+  coding: string[];
+  markup: string[];
+  framework: string[];
+  backend: string[];
+  o11y: string[];
+  cicd: string[];
+  database: string[];
+  cloud: string[];
+};
+
+type SocialMediaType = {
+  name: string;
+  url: string;
+  icon: string;
+};
+
 export default function Home() {
+  // スキルデータを整理
+  const skills: SkillsType = {
+    coding: [
+      'JavaScript',
+      'TypeScript',
+      'Python',
+      'PHP',
+      'SQL',
+      'C',
+      'C++',
+      'Rust',
+      'Ruby',
+      'Golang',
+    ],
+    markup: ['HTML', 'CSS'],
+    framework: ['Vue', 'Svelte', 'Next.js', 'Gin', 'NestJS'],
+    backend: [
+      'Nginx',
+      'Apache',
+      'Docker / Docker Compose',
+      'GraphQL',
+      'REST API',
+    ],
+    o11y: ['Zabbix', 'Grafana', 'Fluentd', 'OpenTelemetry', 'Jaeger'],
+    cicd: ['Git / GitHub Actions', 'Ansible', 'Capistrano', 'Serverspec'],
+    database: ['MySQL', 'MariaDB', 'Oracle', 'Redis', 'Memcached', 'Cassandra'],
+    cloud: ['AWS', 'Cloudflare'],
+  };
+
+  // 興味・関心データ
+  const interests: string[] = [
+    'SRE',
+    'DevSecOps',
+    'Architecture',
+    'WebAssembly',
+    'Modernization',
+    'Robotics',
+  ];
+
+  // 資格データ
+  const qualifications: string[] = [
+    'AWS Certified Solutions Architect - Associate',
+    'AWS Certified Solutions Architect - Professional',
+    '基本情報技術者試験',
+    'LinuC101/102',
+  ];
+
+  // ソーシャルメディアデータ
+  const socialMedia: SocialMediaType[] = [
+    { name: 'Zenn', url: 'https://zenn.dev/ysen', icon: 'logo-only.svg' },
+    {
+      name: 'GitHub',
+      url: 'https://github.com/ys39',
+      icon: '/github-mark.svg',
+    },
+    { name: 'X', url: 'https://x.com/Sypo39', icon: '/x-logo-black.png' },
+  ];
+
+  // スキルタグのレンダリング関数
+  const renderSkillTag = (skill: string, colorClass: string) => (
+    <span
+      key={skill}
+      className={`inline-block ${colorClass} text-sm font-medium px-3 py-1 rounded-lg m-1`}
+    >
+      {skill}
+    </span>
+  );
+
   return (
-    <div className="min-h-screen bg-gray-100">
-      <main className="container mx-auto px-4 py-10">
-        {/* Hero Section */}
-        <section className="text-center mb-10">
-          <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-gray-300">
+    <div className="min-h-screen bg-gray-50">
+      <main className="container mx-auto px-4 py-12 max-w-4xl">
+        {/* ヒーローセクション */}
+        <section className="mb-12 flex flex-col md:flex-row items-center md:items-start gap-8">
+          <div className="relative w-36 h-36 rounded-full overflow-hidden border-4 border-blue-100 shadow-lg">
             <Image
               src="/me_shuffle.webp"
               alt="ys39"
@@ -17,305 +103,159 @@ export default function Home() {
               style={{ objectFit: 'cover' }}
             />
           </div>
-          <h1 className="text-4xl font-bold mt-4 dark:text-gray-700">Sen</h1>
-          <p className="text-gray-700 mt-2">Web Developer</p>
-        </section>
-
-        {/* About Me Section */}
-        <section className="bg-white shadow-md rounded-lg p-8 mb-10 dark:text-gray-700">
-          <h2 className="text-2xl font-semibold mb-4">About Me</h2>
-          <p className="text-gray-700 leading-relaxed">
-            A web engineer with interests in infrastructure, frontend, and
-            backend development, but most skilled in backend development. Always
-            aiming to design more robust and high-performance systems.
-          </p>
-        </section>
-
-        {/* About Me and Tech Bookmarks Section */}
-        <section className="flex flex-col md:flex-row gap-6 mb-10">
-          {/* Weblog Card */}
-          <div className="bg-white shadow-md rounded-lg p-8 dark:text-gray-700 w-full md:w-1/2">
-            <Link
-              href="/weblog"
-              className="text-blue-700 font-medium transition-colors duration-300"
-            >
-              <div>
-                <h2 className="text-2xl font-semibold mb-4">Weblog</h2>
-                <p className="text-gray-700 leading-relaxed">
-                  I will record the things I learn and research daily.
-                </p>
-              </div>
-              <ArrowRightIcon className="h-6 w-6 text-blue-700 float-end" />
-            </Link>
+          <div className="text-center md:text-left flex-1">
+            <h1 className="text-4xl font-bold text-gray-800 mb-2">Sen</h1>
+            <p className="text-xl text-gray-600 mb-4">Web Developer</p>
+            <div className="bg-white rounded-lg p-6 shadow-sm">
+              <p className="text-gray-700 leading-relaxed">
+                A web engineer with interests in infrastructure, backend
+                development. Always aiming to design more robust and
+                high-performance systems.
+              </p>
+            </div>
           </div>
+        </section>
+
+        {/* コンテンツリンクセクション */}
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          {/* Weblog Card */}
+          <Link
+            href="/weblog"
+            className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow flex justify-between items-center group"
+          >
+            <div>
+              <h2 className="text-xl font-semibold text-gray-800 mb-2">
+                Weblog
+              </h2>
+              <p className="text-gray-600">
+                Daily notes on learning and research
+              </p>
+            </div>
+            <ArrowRightIcon className="h-5 w-5 text-blue-500 group-hover:translate-x-1 transition-transform" />
+          </Link>
 
           {/* Tech Bookmarks Card */}
-          <div className="bg-white shadow-md rounded-lg p-8 dark:text-gray-700 w-full md:w-1/2">
-            <Link
-              href="/tech-bookmarks"
-              className="text-blue-700 font-medium transition-colors duration-300"
-            >
-              <div>
-                <h2 className="text-2xl font-semibold mb-4">Tech Bookmarks</h2>
-                <p className="text-gray-700 leading-relaxed">
-                  I will document the technologies and topics planned for future
-                  research.
-                </p>
+          <Link
+            href="/tech-bookmarks"
+            className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow flex justify-between items-center group"
+          >
+            <div>
+              <h2 className="text-xl font-semibold text-gray-800 mb-2">
+                Tech Bookmarks
+              </h2>
+              <p className="text-gray-600">
+                Technologies and topics for future research
+              </p>
+            </div>
+            <ArrowRightIcon className="h-5 w-5 text-blue-500 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </section>
+
+        {/* スキルセクション */}
+        <section className="bg-white rounded-lg p-6 shadow-sm mb-12">
+          <h2 className="text-2xl font-semibold text-gray-800 mb-6 border-b pb-2">
+            Skills
+          </h2>
+
+          <div className="space-y-6">
+            {/* スキルカテゴリをマップ */}
+            {Object.entries(skills).map(([category, skillList]) => (
+              <div key={category} className="mb-4">
+                <h3 className="text-lg font-medium text-gray-700 mb-2 capitalize">
+                  {category === 'cicd'
+                    ? 'CI/CD'
+                    : category === 'o11y'
+                      ? 'Observability'
+                      : category}
+                </h3>
+                <div className="flex flex-wrap">
+                  {skillList.map((skill) =>
+                    renderSkillTag(
+                      skill,
+                      category === 'coding'
+                        ? 'bg-blue-50 text-blue-700'
+                        : category === 'markup'
+                          ? 'bg-green-50 text-green-700'
+                          : category === 'framework'
+                            ? 'bg-orange-50 text-orange-700'
+                            : category === 'backend'
+                              ? 'bg-sky-50 text-sky-700'
+                              : category === 'o11y'
+                                ? 'bg-teal-50 text-teal-700'
+                                : category === 'cicd'
+                                  ? 'bg-indigo-50 text-indigo-700'
+                                  : category === 'database'
+                                    ? 'bg-rose-50 text-rose-700'
+                                    : 'bg-purple-50 text-purple-700'
+                    )
+                  )}
+                </div>
               </div>
-              <ArrowRightIcon className="h-6 w-6 text-blue-700 float-end" />
-            </Link>
+            ))}
           </div>
         </section>
 
-        {/* Skills and achievement section */}
-        <section className="bg-white shadow-md rounded-lg p-8 mb-10 dark:text-gray-700">
-          <h2 className="text-2xl font-semibold mb-4 ">Skills</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {/* Coding */}
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Coding</h3>
-              <ul className="list-none">
-                <li className="bg-slate-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  JavaScript
-                </li>
-                <li className="bg-slate-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  TypeScript
-                </li>
-                <li className="bg-slate-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  Python
-                </li>
-                <li className="bg-slate-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  PHP
-                </li>
-                <li className="bg-slate-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  SQL
-                </li>
-                <li className="bg-slate-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  C
-                </li>
-                <li className="bg-slate-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  C++
-                </li>
-                <li className="bg-slate-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  Rust
-                </li>
-                <li className="bg-slate-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  Ruby
-                </li>
-                <li className="bg-slate-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  Golang
-                </li>
-              </ul>
+        {/* 興味・関心と資格セクション */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          {/* 興味・関心 */}
+          <section className="bg-white rounded-lg p-6 shadow-sm">
+            <h2 className="text-2xl font-semibold text-gray-800 mb-4 border-b pb-2">
+              Interests
+            </h2>
+            <div className="flex flex-wrap">
+              {interests.map((interest) => (
+                <span
+                  key={interest}
+                  className="bg-gray-50 text-gray-700 px-4 py-2 rounded-lg m-1 border border-gray-200"
+                >
+                  {interest}
+                </span>
+              ))}
             </div>
-            {/* Markup */}
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Markup</h3>
-              <ul className="list-none">
-                <li className="bg-stone-300 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  HTML
-                </li>
-                <li className="bg-stone-300 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  CSS
-                </li>
-              </ul>
-            </div>
-            {/* Framework */}
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Framework</h3>
-              <ul className="list-none">
-                <li className="bg-orange-100 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  Vue
-                </li>
-                <li className="bg-orange-100 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  Svelte
-                </li>
-                <li className="bg-orange-100 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  Next.js
-                </li>
-                <li className="bg-orange-100 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  Gin
-                </li>
-                <li className="bg-orange-100 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  NestJS
-                </li>
-              </ul>
-            </div>
-            {/* Backend */}
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Backend</h3>
-              <ul className="list-none">
-                <li className="bg-sky-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  Nginx
-                </li>
-                <li className="bg-sky-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  Apache
-                </li>
-                <li className="bg-sky-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  Docker / Docker Compose
-                </li>
-                <li className="bg-sky-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  GraphQL
-                </li>
-                <li className="bg-sky-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  RESTful API
-                </li>
-              </ul>
-            </div>
-            {/* o11y */}
-            <div>
-              <h3 className="text-xl font-semibold mb-2">o11y</h3>
-              <ul className="list-none">
-                <li className="bg-teal-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  Zabbix
-                </li>
-                <li className="bg-teal-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  Grafana
-                </li>
-                <li className="bg-teal-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  Fluentd
-                </li>
-              </ul>
-            </div>
-            {/* CI/CD */}
-            <div>
-              <h3 className="text-xl font-semibold mb-2">CI/CD</h3>
-              <ul className="list-none">
-                <li className="bg-indigo-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  Git / GitHub Actions
-                </li>
-                <li className="bg-indigo-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  Ansible
-                </li>
-                <li className="bg-indigo-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  Capistrano
-                </li>
-                <li className="bg-indigo-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  Serverspec
-                </li>
-              </ul>
-            </div>
-            {/* Database */}
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Database</h3>
-              <ul className="list-none">
-                <li className="bg-rose-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  MySQL
-                </li>
-                <li className="bg-rose-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  MariaDB
-                </li>
-                <li className="bg-rose-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  Oracle
-                </li>
-                <li className="bg-rose-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  Redis
-                </li>
-                <li className="bg-rose-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  Memcached
-                </li>
-                <li className="bg-rose-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  Cassandra
-                </li>
-              </ul>
-            </div>
-            {/* Cloud */}
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Cloud</h3>
-              <ul className="list-none">
-                <li className="bg-purple-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  AWS
-                </li>
-                <li className="bg-purple-200 text-sm font-medium mr-2 px-4 py-2 rounded-lg mb-2">
-                  Cloudflare
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
+          </section>
 
-        {/* Interests */}
-        <section className="bg-white shadow-md rounded-lg p-8 mb-10 dark:text-gray-700">
-          <h2 className="text-2xl font-semibold mb-4">Interests</h2>
-          <ul className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-4">
-            <li className="bg-gray-100 border  rounded-lg p-4 shadow-md">
-              SRE
-            </li>
-            <li className="bg-gray-100 border  rounded-lg p-4 shadow-md">
-              DevSecOps
-            </li>
-            <li className="bg-gray-100 border  rounded-lg p-4 shadow-md">
-              Architecture
-            </li>
-            <li className="bg-gray-100 border  rounded-lg p-4 shadow-md">
-              WebAssembly
-            </li>
-            <li className="bg-gray-100 border  rounded-lg p-4 shadow-md">
-              Modernization
-            </li>
-            <li className="bg-gray-100 border  rounded-lg p-4 shadow-md">
-              Robotics
-            </li>
-          </ul>
-        </section>
+          {/* 資格 */}
+          <section className="bg-white rounded-lg p-6 shadow-sm">
+            <h2 className="text-2xl font-semibold text-gray-800 mb-4 border-b pb-2">
+              Qualifications
+            </h2>
+            <ul className="space-y-2">
+              {qualifications.map((qualification) => (
+                <li
+                  key={qualification}
+                  className="bg-gray-50 text-gray-700 px-4 py-2 rounded-lg border border-gray-200"
+                >
+                  {qualification}
+                </li>
+              ))}
+            </ul>
+          </section>
+        </div>
 
-        {/* Qualifications */}
-        <section className="bg-white shadow-md rounded-lg p-8 mb-10 dark:text-gray-700">
-          <h2 className="text-2xl font-semibold mb-4">Qualifications</h2>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
-            <li className="bg-gray-100 border  rounded-lg p-4 shadow-md">
-              AWS Certified Solutions Architect - Associate
-            </li>
-            <li className="bg-gray-100 border  rounded-lg p-4 shadow-md">
-              AWS Certified Solutions Architect - Professional
-            </li>
-            <li className="bg-gray-100 border  rounded-lg p-4 shadow-md">
-              基本情報技術者試験
-            </li>
-            <li className="bg-gray-100 border  rounded-lg p-4 shadow-md">
-              LinuC101/102
-            </li>
-          </ul>
-        </section>
-
-        {/* Contact Section */}
-        <section className="bg-white shadow-md rounded-lg p-8 dark:text-gray-700">
-          <h2 className="text-2xl font-semibold mb-4">Social Media</h2>
-          <div className="flex items-center space-x-4">
-            {/* Zenn */}
-            <a
-              href="https://zenn.dev/ysen"
-              className="text-gray-600 hover:text-gray-900"
-              aria-label="Zenn"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <Image src="logo-only.svg" alt="Zenn" width={20} height={20} />
-            </a>
-            {/* Github */}
-            <a
-              href="https://github.com/ys39"
-              className="text-gray-600 hover:text-gray-900"
-              aria-label="GitHub"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <Image
-                src="/github-mark.svg"
-                alt="GitHub"
-                width={20}
-                height={20}
-              />
-            </a>
-            {/* X */}
-            <a
-              href="https://x.com/Sypo39"
-              className="text-gray-600 hover:text-gray-900"
-              aria-label="X"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <Image src="/x-logo-black.png" alt="X" width={20} height={20} />
-            </a>
+        {/* ソーシャルメディアセクション */}
+        <section className="bg-white rounded-lg p-6 shadow-sm">
+          <h2 className="text-2xl font-semibold text-gray-800 mb-4 border-b pb-2">
+            Social Media
+          </h2>
+          <div className="flex items-center space-x-6">
+            {socialMedia.map((social) => (
+              <a
+                key={social.name}
+                href={social.url}
+                className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors"
+                aria-label={social.name}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <Image
+                  src={social.icon}
+                  alt={social.name}
+                  width={24}
+                  height={24}
+                />
+                <span>{social.name}</span>
+              </a>
+            ))}
           </div>
         </section>
       </main>

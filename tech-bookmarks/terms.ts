@@ -17,11 +17,6 @@ export const termsList: TermsData[] = [
     link: 'https://developers.cloudflare.com/vectorize/',
   },
   {
-    title: 'Django',
-    date: '',
-    link: 'https://docs.djangoproject.com/ja/5.1/',
-  },
-  {
     title: 'CircleCI',
     date: '',
     link: 'https://circleci.com/docs/ja/',

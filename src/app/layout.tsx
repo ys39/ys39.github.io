@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   title: 'Sen | Portfolio',
   description: 'Sen portfolio',
   icons: {
-    icon: '/favicon.ico',
+    icon: '/favicon.png',
   },
 };
 

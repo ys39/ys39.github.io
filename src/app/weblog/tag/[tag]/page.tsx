@@ -36,7 +36,7 @@ export default async function PostPage({ params }: TagPageProps) {
           {posts.map((post) => (
             <div
               key={post.slug}
-              className={`${post.isOpen ? '' : 'bg-slate-200'} "bg-white rounded-lg shadow-lg overflow-hidden"`}
+              className={`"${post.isOpen ? '' : 'bg-slate-200'} bg-white rounded-lg shadow-lg overflow-hidden"`}
             >
               {post.isOpen ? (
                 <div className="p-6">
