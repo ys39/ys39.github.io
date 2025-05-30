@@ -1,18 +1,19 @@
 import type { Metadata } from 'next';
-import localFont from 'next/font/local';
+import { Inter, Roboto_Mono } from 'next/font/google';
 import './globals.css';
 import Footer from '../components/footer';
 import 'highlight.js/styles/atom-one-dark.css';
 
-const geistSans = localFont({
-  src: './fonts/GeistVF.woff',
-  variable: '--font-geist-sans',
-  weight: '100 900',
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
 });
-const geistMono = localFont({
-  src: './fonts/GeistMonoVF.woff',
-  variable: '--font-geist-mono',
-  weight: '100 900',
+
+const robotoMono = Roboto_Mono({
+  subsets: ['latin'],
+  variable: '--font-roboto-mono',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -30,9 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${inter.variable} ${robotoMono.variable} antialiased`}>
         {children}
         <Footer />
       </body>
