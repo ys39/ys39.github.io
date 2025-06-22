@@ -11,40 +11,36 @@ export default function WeblogPage() {
     { name: 'Tech Bookmarks' },
   ];
   return (
-    <div className="min-h-screen bg-gray-100">
-      <main className="container mx-auto px-4 py-10">
+    <div className="min-h-screen bg-white">
+      <main className="container mx-auto px-6 py-20 max-w-4xl">
         <Breadcrumb items={breadcrumbItems} />
 
-        <h1 className="text-4xl text-center font-bold mb-4 dark:text-gray-700">
+        <h1 className="text-4xl font-light text-gray-900 mb-4 text-center">
           Tech Bookmarks
         </h1>
-        <div className="text-center text-gray-600 mb-6">
+        <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
           I will document the technologies and topics planned for future
           research.
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        </p>
+
+        <div className="flex flex-wrap gap-3 justify-center">
           {terms.map((term) => (
-            <div
-              key={term.title}
-              className="bg-white rounded-lg shadow-lg overflow-hidden"
-            >
-              <div className="p-6">
-                <h2 className="text-base font-semibold mb-2 text-gray-800">
+            <div key={term.title} className="group">
+              {term.link && term.link.length > 0 ? (
+                <Link
+                  href={term.link}
+                  className="inline-flex items-center gap-2 bg-blue-50 hover:bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm border border-blue-200 transition-colors"
+                  target="_blank"
+                  referrerPolicy="no-referrer"
+                >
                   {term.title}
-                </h2>
-                {term.link && term.link.length > 0 && (
-                  <div className="mt-4">
-                    <Link
-                      href={`${term.link}`}
-                      className="text-blue-700 hover:text-blue-700 font-medium float-end flex items-center pb-2"
-                      target="_blank"
-                      referrerPolicy="no-referrer"
-                    >
-                      Link <FaExternalLinkAlt className="float-end ml-2" />
-                    </Link>
-                  </div>
-                )}
-              </div>
+                  <FaExternalLinkAlt size={12} />
+                </Link>
+              ) : (
+                <span className="inline-block bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm">
+                  {term.title}
+                </span>
+              )}
             </div>
           ))}
         </div>

@@ -80,21 +80,21 @@ export default function Home() {
   ];
 
   // スキルタグのレンダリング関数
-  const renderSkillTag = (skill: string, colorClass: string) => (
+  const renderSkillTag = (skill: string) => (
     <span
       key={skill}
-      className={`inline-block ${colorClass} text-sm font-medium px-3 py-1 rounded-lg m-1`}
+      className="inline-block bg-gray-100 text-gray-700 text-sm px-3 py-2 rounded-full mx-1 mb-2"
     >
       {skill}
     </span>
   );
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <main className="container mx-auto px-4 py-12 max-w-4xl">
+    <div className="min-h-screen bg-white">
+      <main className="container mx-auto px-6 py-20 max-w-3xl">
         {/* ヒーローセクション */}
-        <section className="mb-12 flex flex-col md:flex-row items-center md:items-start gap-8">
-          <div className="relative w-36 h-36 rounded-full overflow-hidden border-4 border-blue-100 shadow-lg">
+        <section className="mb-24 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+          <div className="relative w-32 h-32 rounded-full overflow-hidden mx-auto md:mx-0">
             <Image
               src="/me_shuffle.webp"
               alt="ys39"
@@ -103,65 +103,59 @@ export default function Home() {
               style={{ objectFit: 'cover' }}
             />
           </div>
-          <div className="text-center md:text-left flex-1">
-            <h1 className="text-4xl font-bold text-gray-800 mb-2">Sen</h1>
-            <p className="text-xl text-gray-600 mb-4">Web Developer</p>
-            <div className="bg-white rounded-lg p-6 shadow-sm">
-              <p className="text-gray-700 leading-relaxed">
-                A web engineer with interests in infrastructure, backend
-                development. Always aiming to design more robust and
-                high-performance systems.
-              </p>
-            </div>
+          <div className="md:col-span-2">
+            <h1 className="text-4xl font-light text-gray-900 mb-1">Sen</h1>
+            <p className="text-lg text-gray-500 mb-4">Web Developer</p>
+            <p className="text-gray-600 leading-relaxed">
+              A web engineer with interests in infrastructure, backend
+              development. Always aiming to design more robust and
+              high-performance systems.
+            </p>
           </div>
         </section>
 
         {/* コンテンツリンクセクション */}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-20">
           {/* Weblog Card */}
           <Link
             href="/weblog"
-            className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow flex justify-between items-center group"
+            className="border border-gray-200 rounded-xl p-8 hover:border-gray-300 transition-colors flex justify-between items-center group"
           >
             <div>
-              <h2 className="text-xl font-semibold text-gray-800 mb-2">
-                Weblog
-              </h2>
-              <p className="text-gray-600">
+              <h2 className="text-xl font-medium text-gray-900 mb-2">Weblog</h2>
+              <p className="text-gray-500">
                 Daily notes on learning and research
               </p>
             </div>
-            <ArrowRightIcon className="h-5 w-5 text-blue-500 group-hover:translate-x-1 transition-transform" />
+            <ArrowRightIcon className="h-5 w-5 text-gray-400 group-hover:translate-x-1 transition-transform" />
           </Link>
 
           {/* Tech Bookmarks Card */}
           <Link
             href="/tech-bookmarks"
-            className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow flex justify-between items-center group"
+            className="border border-gray-200 rounded-xl p-8 hover:border-gray-300 transition-colors flex justify-between items-center group"
           >
             <div>
-              <h2 className="text-xl font-semibold text-gray-800 mb-2">
+              <h2 className="text-xl font-medium text-gray-900 mb-2">
                 Tech Bookmarks
               </h2>
-              <p className="text-gray-600">
+              <p className="text-gray-500">
                 Technologies and topics for future research
               </p>
             </div>
-            <ArrowRightIcon className="h-5 w-5 text-blue-500 group-hover:translate-x-1 transition-transform" />
+            <ArrowRightIcon className="h-5 w-5 text-gray-400 group-hover:translate-x-1 transition-transform" />
           </Link>
         </section>
 
         {/* スキルセクション */}
-        <section className="bg-white rounded-lg p-6 shadow-sm mb-12">
-          <h2 className="text-2xl font-semibold text-gray-800 mb-6 border-b pb-2">
-            Skills
-          </h2>
+        <section className="mb-20">
+          <h2 className="text-2xl font-light text-gray-900 mb-8">Skills</h2>
 
-          <div className="space-y-6">
+          <div className="space-y-8">
             {/* スキルカテゴリをマップ */}
             {Object.entries(skills).map(([category, skillList]) => (
-              <div key={category} className="mb-4">
-                <h3 className="text-lg font-medium text-gray-700 mb-2 capitalize">
+              <div key={category}>
+                <h3 className="text-sm font-medium text-gray-500 mb-4 uppercase tracking-wide">
                   {category === 'cicd'
                     ? 'CI/CD'
                     : category === 'o11y'
@@ -169,26 +163,7 @@ export default function Home() {
                       : category}
                 </h3>
                 <div className="flex flex-wrap">
-                  {skillList.map((skill) =>
-                    renderSkillTag(
-                      skill,
-                      category === 'coding'
-                        ? 'bg-blue-50 text-blue-700'
-                        : category === 'markup'
-                          ? 'bg-green-50 text-green-700'
-                          : category === 'framework'
-                            ? 'bg-orange-50 text-orange-700'
-                            : category === 'backend'
-                              ? 'bg-sky-50 text-sky-700'
-                              : category === 'o11y'
-                                ? 'bg-teal-50 text-teal-700'
-                                : category === 'cicd'
-                                  ? 'bg-indigo-50 text-indigo-700'
-                                  : category === 'database'
-                                    ? 'bg-rose-50 text-rose-700'
-                                    : 'bg-purple-50 text-purple-700'
-                    )
-                  )}
+                  {skillList.map((skill) => renderSkillTag(skill))}
                 </div>
               </div>
             ))}
@@ -196,17 +171,17 @@ export default function Home() {
         </section>
 
         {/* 興味・関心と資格セクション */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
           {/* 興味・関心 */}
-          <section className="bg-white rounded-lg p-6 shadow-sm">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4 border-b pb-2">
+          <section>
+            <h2 className="text-2xl font-light text-gray-900 mb-6">
               Interests
             </h2>
             <div className="flex flex-wrap">
               {interests.map((interest) => (
                 <span
                   key={interest}
-                  className="bg-gray-50 text-gray-700 px-4 py-2 rounded-lg m-1 border border-gray-200"
+                  className="bg-gray-100 text-gray-700 px-3 py-2 rounded-full mx-1 mb-2 text-sm"
                 >
                   {interest}
                 </span>
@@ -215,16 +190,13 @@ export default function Home() {
           </section>
 
           {/* 資格 */}
-          <section className="bg-white rounded-lg p-6 shadow-sm">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4 border-b pb-2">
+          <section>
+            <h2 className="text-2xl font-light text-gray-900 mb-6">
               Qualifications
             </h2>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {qualifications.map((qualification) => (
-                <li
-                  key={qualification}
-                  className="bg-gray-50 text-gray-700 px-4 py-2 rounded-lg border border-gray-200"
-                >
+                <li key={qualification} className="text-gray-600 text-sm">
                   {qualification}
                 </li>
               ))}
@@ -233,16 +205,16 @@ export default function Home() {
         </div>
 
         {/* ソーシャルメディアセクション */}
-        <section className="bg-white rounded-lg p-6 shadow-sm">
-          <h2 className="text-2xl font-semibold text-gray-800 mb-4 border-b pb-2">
+        <section>
+          <h2 className="text-2xl font-light text-gray-900 mb-6">
             Social Media
           </h2>
-          <div className="flex items-center space-x-6">
+          <div className="flex items-center space-x-8">
             {socialMedia.map((social) => (
               <a
                 key={social.name}
                 href={social.url}
-                className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors"
+                className="flex items-center space-x-2 text-gray-500 hover:text-gray-900 transition-colors"
                 aria-label={social.name}
                 target="_blank"
                 rel="noreferrer noopener"
@@ -250,10 +222,10 @@ export default function Home() {
                 <Image
                   src={social.icon}
                   alt={social.name}
-                  width={24}
-                  height={24}
+                  width={20}
+                  height={20}
                 />
-                <span>{social.name}</span>
+                <span className="text-sm">{social.name}</span>
               </a>
             ))}
           </div>

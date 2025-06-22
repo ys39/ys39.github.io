@@ -21,7 +21,8 @@ body {
 }
 
 @layer base {
-  code, pre {
+  code,
+  pre {
     font-family: var(--font-roboto-mono), monospace;
   }
 }
